@@ -127,6 +127,59 @@
       box-shadow:0 0 12px #f7931a, 0 0 20px #f7931a;
       text-shadow:0 0 10px #f7931a;
     }
+/* BOTÓN FEED ULTRA-ESPECIAL */
+nav a.btn-feed {
+  position: relative;
+  background: linear-gradient(45deg, #ff9d00, #ff5400);
+  color: #111;
+  border-radius: 50px; /* forma más redonda */
+  padding: 12px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #ffaa33;
+  font-size: 15px;
+  text-shadow: 0 0 4px #fff;
+  box-shadow: 0 0 10px #ffae00, 0 0 20px #ff6a00, 0 0 30px #ff6a00;
+  animation: feedPulse 1.4s infinite alternate ease-in-out,
+             floaty 3s infinite ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+/* Efecto Hover Explosivo */
+nav a.btn-feed:hover {
+  transform: scale(1.2) rotate(-1deg);
+  background: linear-gradient(45deg, #ffffff, #ff9d00);
+  box-shadow: 0 0 20px #fff, 0 0 45px #ffae00,
+              0 0 70px #ff6a00;
+  color: #000;
+}
+
+/* Animación de brillo respirando */
+@keyframes feedPulse {
+  from { box-shadow: 0 0 10px #ffae00; }
+  to { box-shadow: 0 0 30px #ff6a00; }
+}
+
+/* Flotación sutil para llamar la atención */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Línea neón animada */
+nav a.btn-feed::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50px;
+  border: 2px dashed #ffdd99;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
 
     /* SECCIONES */
     .section {
@@ -258,7 +311,7 @@
       <a href="#desafios">Desafíos</a>
       <a href="#historia">Mi Historia</a>
       <a href="#camino">Mi Camino</a>
-      <a href="#actualizaciones">Actualizaciones</a>
+      <a href="#actualizaciones" class="btn-feed">Lo Último 🚀</a>
       <a href="#mision">Mi Misión</a>
       <a href="#literatura">Literatura que Transforma</a>
       <a href="#contactos">Contactos</a>
