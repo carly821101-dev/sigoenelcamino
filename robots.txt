@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sigoenelcamino.netlify.app/sitemap.xml
+Sitemap: https://www.criptocharlyone.site/sitemap.xml
