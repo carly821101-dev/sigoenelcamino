@@ -267,6 +267,35 @@ nav a.btn-feed::before {
       }
     }
 
+    /* BOTÓN DIARIO DE VIDA – IMÁN DE CLIENTES */
+nav a.btn-diario {
+  position: relative;
+  background: linear-gradient(45deg, #f7931a, #ffffff);
+  color: #000;
+  border-radius: 50px;
+  padding: 12px 20px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #ffaa33;
+  font-size: 15px;
+  text-shadow: 0 0 4px #fff;
+  box-shadow: 0 0 18px #f7931a, 0 0 26px #ffb347, 0 0 38px #ffdd99;
+  animation: btcGlow 1.5s infinite alternate ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+nav a.btn-diario:hover {
+  transform: scale(1.18);
+  background: linear-gradient(45deg, #ffffff, #f9b653);
+  box-shadow: 0 0 30px #fff, 0 0 55px #ffc266;
+}
+
+/* animación premium */
+@keyframes btcGlow {
+  0% { box-shadow: 0 0 12px #f7931a; }
+  100% { box-shadow: 0 0 40px #ffdd99; }
+}
+
   </style>
 </head>
 <body>
@@ -317,6 +346,8 @@ nav a.btn-feed::before {
       <a href="#contactos">Contactos</a>
       <a href="#donacion">Donación BTC</a>
       <a href="#comentarios">Comentarios</a>
+      <a href="#diario" class="btn-diario">Diario de Vida 📘</a>
+
 
       <!-- removed stray closing a tag -->
 
@@ -1927,6 +1958,134 @@ function copyBTC() {
 
     </div>
 </section>
+<<!-- ⭐⭐⭐ SECCIÓN NUEVA – DIARIO DE VIDA ULTRA PREMIUM ⭐⭐⭐ -->
+<section id="diario" class="section" style="margin-top:80px; position:relative;">
+
+  <!-- EFECTO ESTRELLAS FLOTANTES -->
+  <div class="diario-stars"></div>
+
+  <h2 style="
+    color:#f7931a;
+    text-shadow:0 0 22px #f7931a, 0 0 40px #ffb347;
+    text-align:center;
+    font-size:2.4rem;
+    margin-bottom:30px;
+    animation: btcPulse 2s infinite alternate;
+  ">
+    📘 Diario de Vida – Carlos Luis Rodriguez Ru₿io
+  </h2>
+
+  <p style="
+    color:white;
+    max-width:880px;
+    margin:0 auto 40px;
+    font-size:1.25rem;
+    line-height:1.85;
+    text-align:center;
+    text-shadow:0 0 12px rgba(255,255,255,0.5);
+  ">
+    Un registro sagrado de mis días.
+    Señales del universo, aprendizajes, encuentros con la naturaleza,
+    y todo aquello que Dios y la vida ponen en mi camino para guiarme.
+    Este es mi diario, mi verdad y mi proceso de transformación diaria.
+  </p>
+
+  <!-- CONTENEDOR ELEGANTE -->
+  <div id="diario-feed" style="
+    max-width:900px;
+    margin:auto;
+    padding:30px 20px;
+    border:2px solid rgba(247,147,26,0.4);
+    border-radius:14px;
+    background:rgba(0,0,0,0.55);
+    backdrop-filter:blur(4px);
+    box-shadow:0 0 22px #f7931a;
+    position:relative;
+  ">
+  </div>
+
+  <a class="back-menu" onclick="showMenu()">Volver al menú</a>
+</section>
+
+<!-- Cargar entradas desde diario.html -->
+<script>
+fetch("diario.html")
+  .then(r => r.text())
+  .then(html => {
+    document.getElementById("diario-feed").innerHTML = html;
+  });
+</script>
+
+<!-- 🎨 ESTILOS PREMIUM DEL DIARIO -->
+<style>
+/* Fondo de estrellas animadas */
+.diario-stars {
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 2px, transparent 2px);
+  background-size: 60px 60px;
+  animation: starsMove 18s linear infinite;
+  opacity:0.35;
+}
+
+@keyframes starsMove {
+  0% { transform: translate(0,0); }
+  100% { transform: translate(-200px, -200px); }
+}
+
+/* Tarjetas del timeline */
+.timeline-item {
+  background: rgba(20, 20, 20, 0.9);
+  border-left: 4px solid #f7931a;
+  margin: 30px 0;
+  padding: 22px 25px;
+  border-radius: 13px;
+  box-shadow: 0 0 18px #f7931a;
+  animation: fadeIn 1s ease forwards;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Luz flotante detrás */
+.timeline-item::before {
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  background: radial-gradient(circle, rgba(247,147,26,0.35), transparent 70%);
+  top:-60px;
+  right:-60px;
+  filter: blur(15px);
+  animation: floatGlow 6s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+  0% { transform: translateY(0); opacity:0.8;}
+  100% { transform: translateY(18px); opacity:1;}
+}
+
+.timeline-item h4 {
+  color: #f7931a;
+  text-shadow:0 0 10px #f7931a;
+  font-size:1.45rem;
+  margin-bottom:10px;
+}
+
+.timeline-item p {
+  color:white;
+  font-size:1.15rem;
+  line-height:1.8;
+  text-shadow:0 0 8px rgba(255,255,255,0.2);
+}
+
+/* Aparición suave */
+@keyframes fadeIn {
+  0% { opacity:0; transform:translateY(35px); }
+  100% { opacity:1; transform:translateY(0); }
+}
+</style>
+
 
 <script>
 function sendComment(event) {

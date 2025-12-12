@@ -1,0 +1,225 @@
+<!-- INICIO - INTRODUCCIÓN ESPECTACULAR PARA DIARIO DE VIDA -->
+<style>
+/* Contenedor principal */
+#diary-intro {
+  max-width: 920px;
+  margin: 0 auto 30px;
+  padding: 28px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(247,147,26,0.12);
+  box-shadow: 0 8px 40px rgba(247,147,26,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+}
+
+/* Partículas doradas sutiles */
+#diary-intro::before {
+  content: "";
+  position: absolute;
+  inset: -20% -10%;
+  background-image: radial-gradient(rgba(255,220,140,0.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity: 0.7;
+  transform: translateY(-10%);
+  filter: blur(12px);
+  pointer-events: none;
+  animation: introParticles 18s linear infinite;
+}
+
+/* Llama dorada detrás del título */
+#diary-intro .glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -220px;
+  top: -160px;
+  background: radial-gradient(circle, rgba(247,147,26,0.12), transparent 40%);
+  filter: blur(36px);
+  pointer-events: none;
+  mix-blend-mode: screen;
+  animation: slowFloat 8s ease-in-out infinite;
+}
+
+/* Titular elegante */
+#diary-intro h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.6rem;
+  margin: 6px 0 6px;
+  color: #ffd89b;
+  text-shadow:
+    0 0 10px rgba(255,220,140,0.25),
+    0 0 30px rgba(247,147,26,0.18);
+  letter-spacing: 0.6px;
+  z-index: 3;
+}
+
+/* Subtítulo pequeño */
+#diary-intro .sub {
+  color: #e8e8e8;
+  font-size: 1rem;
+  max-width: 820px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  z-index: 3;
+  opacity: 0.98;
+}
+
+/* Cinta dorada decorativa */
+#diary-intro .bar {
+  height: 6px;
+  width: 160px;
+  border-radius: 100px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(247,147,26,0.95));
+  box-shadow: 0 0 18px rgba(247,147,26,0.45);
+  margin: 12px 0 22px;
+}
+
+/* Caja del texto que se escribe */
+#diary-intro .typed {
+  font-size: 1.08rem;
+  color: #f7f7f7;
+  line-height: 1.75;
+  min-height: 5.2rem; /* espacio para la escritura */
+  z-index: 3;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Cursor parpadeante */
+#diary-intro .typed .cursor {
+  display: inline-block;
+  width: 3px;
+  background: #ffd27f;
+  margin-left: 6px;
+  animation: blink 0.9s steps(2) infinite;
+  vertical-align: middle;
+  height: 1.1em;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(255,210,120,0.9);
+}
+
+/* Botón elegante para leer entradas o suscribirse */
+#diary-intro .cta {
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg,#fff9f0,#ffd27f);
+  color: #111;
+  font-weight:700;
+  text-decoration:none;
+  box-shadow: 0 6px 24px rgba(247,147,26,0.15), 0 0 12px rgba(255,220,140,0.06);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+#diary-intro .cta:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 12px 40px rgba(247,147,26,0.22); }
+
+/* Animaciones */
+@keyframes introParticles {
+  0% { transform: translateY(-10%) translateX(0); opacity:0.7; }
+  50% { transform: translateY(6%) translateX(-6%); opacity:0.55; }
+  100% { transform: translateY(-10%) translateX(0); opacity:0.7; }
+}
+@keyframes slowFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+@keyframes blink { 0% { opacity:1 } 50%{ opacity:0 } 100%{ opacity:1 } }
+
+/* Aparición suave del contenedor */
+#diary-intro { opacity:0; transform: translateY(18px); transition: all .7s cubic-bezier(.2,.9,.2,1); }
+#diary-intro.show { opacity:1; transform: translateY(0); }
+</style>
+
+<div id="diary-intro" aria-live="polite">
+  <div class="glow" aria-hidden="true"></div>
+
+  <h1>📘 Diario de Vida — Ru₿io</h1>
+  <div class="bar" aria-hidden="true"></div>
+
+  <div class="sub">Un lugar sagrado donde registro las señales, las pequeñas victorias y las lecciones que el día me trae. Aquí convergen la fe, la naturaleza y la práctica diaria de crecer con propósito.</div>
+
+  <div class="typed" id="diaryTyped"></div>
+
+  <a class="cta" href="#diario" id="diaryCTA">Leé mi primera entrada — Señal del oso hormiguero</a>
+</div>
+
+<script>
+/* Texto que se escribirá (puedes editar las frases si querés) */
+const diaryLines = [
+  "Cada día trae su propio mensaje. Aquí guardo los encuentros con la naturaleza, las señales silenciosas y las reflexiones que fortalecen mi fe y mi propósito.",
+  "Este espacio no es sólo para contar hechos: es para detenerme, agradecer, aprender y recordar que cada paso es una bendición del camino."
+];
+
+const typedEl = document.getElementById('diaryTyped');
+const introContainer = document.getElementById('diary-intro');
+
+/* mostrar contenedor con animación */
+setTimeout(()=> introContainer.classList.add('show'), 150);
+
+/* Funcion de escritura */
+async function typeLines(lines, el){
+  for (let i=0;i<lines.length;i++){
+    await typeOne(lines[i], el);
+    if(i < lines.length - 1){
+      // pause between lines
+      await new Promise(r => setTimeout(r, 800));
+      // add a line break
+      el.innerHTML += "<br><br>";
+    }
+  }
+  // remove cursor after done
+  const cursor = el.querySelector('.cursor');
+  if(cursor) cursor.remove();
+}
+
+function typeOne(text, el){
+  return new Promise(resolve => {
+    let i = 0;
+    const p = document.createElement('span');
+    el.appendChild(p);
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    el.appendChild(cursor);
+
+    const speed = 26; // velocidad de escritura (ms por carácter)
+    function tick(){
+      if(i < text.length){
+        p.innerHTML += escapeHtml(text[i]);
+        i++;
+        setTimeout(tick, speed + Math.random()*18);
+      } else {
+        resolve();
+      }
+    }
+    tick();
+  });
+}
+
+/* Escape básico para seguridad al insertar texto */
+function escapeHtml(str){
+  return str.replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"})[m]; });
+}
+
+/* Inicia la escritura cuando el usuario ve la sección (intersección) */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      typeLines(diaryLines, typedEl);
+      observer.disconnect();
+    }
+  });
+},{ threshold: 0.35 });
+
+observer.observe(introContainer);
+
+/* CTA smooth scroll */
+document.getElementById('diaryCTA').addEventListener('click', (e)=>{
+  e.preventDefault();
+  const target = document.querySelector('#diario-feed') || document.querySelector('#diario');
+  if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+});
+</script>
+<!-- FIN - INTRODUCCIÓN ESPECTACULAR PARA DIARIO DE VIDA -->
