@@ -1,10 +1,60 @@
-<!-- INTRODUCCIÓN DEL DIARIO -->
+<!-- =============================== -->
+<!-- NUEVA ENTRADA DEL DIARIO -->
+<!-- FECHA: 18/12/2025 -->
+<!-- =============================== -->
+
 <div class="timeline-item">
 
-  <h4>📘 Bienvenido a Mi Diario de Vida</h4>
+  <h4>🗓️ Diario – 18 de diciembre de 2025</h4>
 
-  <!-- FECHA Y PROPÓSITO -->
-  <h5>🗓️ Inicio del Diario</h5>
+  <h5>🌱 Un logro silencioso, pero real</h5>
+
+  <p>
+    Hoy quiero dejar registrado un logro que para mí tiene mucho valor.
+    Después de tiempo de trabajo silencioso, reflexión y constancia,
+    logré convertir una herramienta que uso en mi día a día en un sistema real,
+    funcional y honesto, listo para compartir con quien lo necesite.
+  </p>
+
+  <p>
+    No nació desde la ambición de vender humo ni prometer resultados imposibles,
+    sino desde la necesidad de orden, claridad y disciplina.
+    Así nació
+    <span class="credinicia-link" onclick="openCrediniciaModal()">Credinicia ₿</span>,
+    un sistema de control de brokers y capital que refleja exactamente cómo entiendo el trading y la vida:
+    con responsabilidad, paciencia y enfoque.
+  </p>
+
+  <p>
+    Verlo terminado, integrado a mi página y publicado de forma profesional en Hotmart,
+    me llenó de una satisfacción tranquila.
+    No euforia, no ansiedad. <strong>Paz.</strong>
+    La paz de saber que estoy construyendo paso a paso,
+    sin traicionarme, sin atajos.
+  </p>
+
+  <p>
+    Este logro me recuerda que no hace falta gritar para avanzar,
+    ni correr para llegar.
+    Hace falta constancia, coherencia y fe en el proceso.
+    Mañana será otro día, otro paso,
+    pero hoy me permito reconocer este avance y agradecer.
+  </p>
+
+  <p style="font-style: italic; text-align: right;">
+    Sigo en el camino.
+  </p>
+
+</div>
+
+<!-- =============================== -->
+<!-- ENTRADA ORIGINAL DEL DIARIO -->
+<!-- FECHA: 17/12/2025 -->
+<!-- =============================== -->
+
+<div class="timeline-item">
+
+
   <p>
     Hoy 17/12/2025 decido inaugurar esta sección de mi diario con total honestidad y gratitud.
   </p>
@@ -54,3 +104,65 @@
   </p>
 
 </div>
+
+<!-- MODAL CREDINICIA -->
+<div id="crediniciaModal" class="modal-overlay" onclick="closeCrediniciaModal(event)">
+  <div class="modal-content">
+    <span class="modal-close" onclick="closeCrediniciaModal()">✕</span>
+    <img src="credinicia.png" alt="Credinicia" class="modal-image">
+  </div>
+</div>
+
+<style>
+.credinicia-link {
+  color: #f7931a;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px dashed rgba(247,147,26,0.6);
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #151515;
+  padding: 20px;
+  border-radius: 14px;
+  max-width: 420px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+</style>
+
+<script>
+function openCrediniciaModal() {
+  document.getElementById('crediniciaModal').style.display = 'flex';
+}
+
+function closeCrediniciaModal(event) {
+  if (!event || event.target.id === 'crediniciaModal') {
+    document.getElementById('crediniciaModal').style.display = 'none';
+  }
+}
+</script>
