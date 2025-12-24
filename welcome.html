@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Bienvenido</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: #000;
+  color: #fff;
+}
+
+/* CANVAS */
+canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* CENTRADO */
+.center {
+  position: relative;
+  z-index: 2;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* MODAL */
+.card {
+  position: relative;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+  padding: 50px;
+  border-radius: 28px;
+  max-width: 560px;
+  width: 90%;
+  text-align: center;
+}
+
+/* BORDE BRILLANTE */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #f7931a, #ffd27d, #f7931a);
+  filter: blur(14px);
+  opacity: 0.9;
+  z-index: -1;
+  animation: glow 4s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* SVG TEXTO */
+svg {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 25px;
+}
+
+.text-outline {
+  fill: none;
+  stroke: white;
+  stroke-width: 2.2;
+  stroke-dasharray: 1200;
+  stroke-dashoffset: 1200;
+  animation: write 3.5s ease forwards;
+}
+
+.text-btc {
+  stroke: #f7931a;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 6px rgba(247,147,26,0.8));
+}
+
+@keyframes write {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 35px;
+}
+
+/* BOTÓN */
+button {
+  padding: 16px 45px;
+  border-radius: 40px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f7931a, #ffb347);
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 0 30px rgba(247,147,26,0.9);
+  transition: all 0.35s ease;
+}
+
+button:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 55px rgba(247,147,26,1);
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="center">
+  <div class="card">
+
+    <!-- TEXTO ESCRIBIÉNDOSE -->
+    <svg viewBox="0 0 700 120">
+      <!-- TEXTO BLANCO -->
+      <text x="50%" y="75"
+            text-anchor="middle"
+            font-size="52"
+            letter-spacing="4"
+            class="text-outline">
+        BIENVENIDO A MI ₿LOG
+      </text>
+
+      <!-- ₿ RESALTADA -->
+      <text x="50%" y="75"
+            text-anchor="middle"
+            font-size="52"
+            letter-spacing="4"
+            class="text-outline text-btc">
+        ₿
+      </text>
+    </svg>
+
+    <p>
+      Un espacio donde convergen el crecimiento personal,
+      la disciplina mental, el trading consciente y la
+      construcción diaria de una vida con propósito,
+      visión y libertad financiera.
+    </p>
+
+    <button onclick="enterSite()">Entrar al sitio</button>
+  </div>
+</div>
+
+<script>
+/* BLOCKCHAIN ANIMATION */
+const canvas = document.getElementById("bg");
+const ctx = canvas.getContext("2d");
+
+function resize() {
+  canvas.width = innerWidth;
+  canvas.height = innerHeight;
+}
+window.addEventListener("resize", resize);
+resize();
+
+const nodes = Array.from({length: 85}, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  vx: (Math.random() - 0.5) * 0.5,
+  vy: (Math.random() - 0.5) * 0.5
+}));
+
+function animate() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  nodes.forEach(n => {
+    n.x += n.vx;
+    n.y += n.vy;
+    if (n.x < 0 || n.x > canvas.width) n.vx *= -1;
+    if (n.y < 0 || n.y > canvas.height) n.vy *= -1;
+  });
+
+  for (let i = 0; i < nodes.length; i++) {
+    for (let j = i + 1; j < nodes.length; j++) {
+      const dx = nodes[i].x - nodes[j].x;
+      const dy = nodes[i].y - nodes[j].y;
+      const dist = Math.hypot(dx, dy);
+      if (dist < 140) {
+        ctx.strokeStyle = "rgba(247,147,26,0.18)";
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(nodes[j].x, nodes[j].y);
+        ctx.stroke();
+      }
+    }
+  }
+
+  nodes.forEach(n => {
+    ctx.fillStyle = "#f7931a";
+    ctx.beginPath();
+    ctx.arc(n.x, n.y, 2, 0, Math.PI * 2);
+    ctx.fill();
+  });
+
+  requestAnimationFrame(animate);
+}
+animate();
+
+/* ENTRAR */
+function enterSite() {
+  location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

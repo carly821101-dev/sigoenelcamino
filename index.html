@@ -2271,6 +2271,13 @@ function sendComment(event) {
     }
   </script>
 
+<script>
+  // Si todavía no pasó por el welcome
+  if (!sessionStorage.getItem("fromWelcome")) {
+    sessionStorage.setItem("fromWelcome", "true");
+    window.location.href = "welcome.html";
+  }
+</script>
 
 </body>
 </html>
