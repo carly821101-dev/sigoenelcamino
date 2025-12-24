@@ -39,7 +39,7 @@ canvas {
 .card {
   position: relative;
   background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   padding: 50px;
   border-radius: 28px;
   max-width: 560px;
@@ -54,8 +54,8 @@ canvas {
   inset: -3px;
   border-radius: 32px;
   background: linear-gradient(120deg, #f7931a, #ffd27d, #f7931a);
-  filter: blur(14px);
-  opacity: 0.9;
+  filter: blur(16px);
+  opacity: 0.95;
   z-index: -1;
   animation: glow 4s ease-in-out infinite;
 }
@@ -69,23 +69,23 @@ canvas {
 /* SVG TEXTO */
 svg {
   width: 100%;
-  max-width: 480px;
-  margin-bottom: 25px;
+  max-width: 520px;
+  margin-bottom: 30px;
 }
 
 .text-outline {
   fill: none;
   stroke: white;
-  stroke-width: 2.2;
-  stroke-dasharray: 1200;
-  stroke-dashoffset: 1200;
+  stroke-width: 2.4;
+  stroke-dasharray: 1400;
+  stroke-dashoffset: 1400;
   animation: write 3.5s ease forwards;
 }
 
 .text-btc {
   stroke: #f7931a;
-  stroke-width: 3;
-  filter: drop-shadow(0 0 6px rgba(247,147,26,0.8));
+  stroke-width: 3.2;
+  filter: drop-shadow(0 0 10px rgba(247,147,26,0.9));
 }
 
 @keyframes write {
@@ -94,87 +94,86 @@ svg {
   }
 }
 
+/* TEXTO DESCRIPCIÓN CON BRILLO */
 p {
-  font-size: 16px;
-  line-height: 1.7;
-  opacity: 0.9;
-  margin-bottom: 35px;
+  font-size: 17px;
+  line-height: 1.75;
+  opacity: 0.95;
+  margin-bottom: 40px;
+  text-shadow:
+    0 0 8px rgba(247,147,26,0.35),
+    0 0 16px rgba(247,147,26,0.25);
 }
 
 /* BOTÓN */
 button {
-  padding: 16px 45px;
-  border-radius: 40px;
+  padding: 18px 50px;
+  border-radius: 45px;
   border: none;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bold;
   background: linear-gradient(135deg, #f7931a, #ffb347);
   color: #000;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(247,147,26,0.9);
+  box-shadow: 0 0 35px rgba(247,147,26,0.95);
   transition: all 0.35s ease;
 }
 
 button:hover {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 0 55px rgba(247,147,26,1);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 60px rgba(247,147,26,1);
 }
 
 /* =========================
-   AJUSTES MOBILE
+   MOBILE GRANDE DE VERDAD
    ========================= */
 @media (max-width: 768px) {
 
   .center {
-    padding: 20px;
+    padding: 0;
   }
 
   .card {
-    width: 100%;
-    max-width: 100%;
-    padding: 35px 22px;
-    border-radius: 22px;
-  }
-
-  .card::before {
-    inset: -2px;
+    width: 94vw;
+    height: auto;
+    max-width: none;
+    padding: 45px 26px;
     border-radius: 26px;
-    filter: blur(12px);
   }
 
   svg {
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 28px;
   }
 
   svg text {
-    font-size: 42px;
+    font-size: 52px;
     letter-spacing: 3px;
   }
 
   p {
-    font-size: 17px;
-    line-height: 1.6;
-    margin-bottom: 30px;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 38px;
   }
 
   button {
     width: 100%;
-    padding: 18px;
-    font-size: 17px;
-    border-radius: 45px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 50px;
   }
 }
 
 /* MOBILE CHICO */
-@media (max-width: 400px) {
+@media (max-width: 420px) {
 
   svg text {
-    font-size: 36px;
+    font-size: 46px;
   }
 
   p {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 </style>
@@ -187,11 +186,10 @@ button:hover {
 <div class="center">
   <div class="card">
 
-    <!-- TEXTO ESCRIBIÉNDOSE -->
     <svg viewBox="0 0 700 120">
       <text x="50%" y="75"
             text-anchor="middle"
-            font-size="52"
+            font-size="56"
             letter-spacing="4"
             class="text-outline">
         BIENVENIDO A MI ₿LOG
@@ -199,7 +197,7 @@ button:hover {
 
       <text x="50%" y="75"
             text-anchor="middle"
-            font-size="52"
+            font-size="56"
             letter-spacing="4"
             class="text-outline text-btc">
         ₿
@@ -219,7 +217,6 @@ button:hover {
 </div>
 
 <script>
-/* BLOCKCHAIN ANIMATION */
 const canvas = document.getElementById("bg");
 const ctx = canvas.getContext("2d");
 
@@ -273,7 +270,6 @@ function animate() {
 }
 animate();
 
-/* ENTRAR */
 function enterSite() {
   location.href = "index.html";
 }
