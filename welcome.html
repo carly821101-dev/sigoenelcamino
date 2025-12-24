@@ -119,6 +119,64 @@ button:hover {
   transform: translateY(-3px) scale(1.04);
   box-shadow: 0 0 55px rgba(247,147,26,1);
 }
+
+/* =========================
+   AJUSTES MOBILE
+   ========================= */
+@media (max-width: 768px) {
+
+  .center {
+    padding: 20px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    padding: 35px 22px;
+    border-radius: 22px;
+  }
+
+  .card::before {
+    inset: -2px;
+    border-radius: 26px;
+    filter: blur(12px);
+  }
+
+  svg {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  svg text {
+    font-size: 42px;
+    letter-spacing: 3px;
+  }
+
+  p {
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+  }
+
+  button {
+    width: 100%;
+    padding: 18px;
+    font-size: 17px;
+    border-radius: 45px;
+  }
+}
+
+/* MOBILE CHICO */
+@media (max-width: 400px) {
+
+  svg text {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
 </style>
 </head>
 
@@ -131,7 +189,6 @@ button:hover {
 
     <!-- TEXTO ESCRIBIÉNDOSE -->
     <svg viewBox="0 0 700 120">
-      <!-- TEXTO BLANCO -->
       <text x="50%" y="75"
             text-anchor="middle"
             font-size="52"
@@ -140,7 +197,6 @@ button:hover {
         BIENVENIDO A MI ₿LOG
       </text>
 
-      <!-- ₿ RESALTADA -->
       <text x="50%" y="75"
             text-anchor="middle"
             font-size="52"
@@ -158,6 +214,7 @@ button:hover {
     </p>
 
     <button onclick="enterSite()">Entrar al sitio</button>
+
   </div>
 </div>
 
