@@ -230,6 +230,41 @@
   font-weight: bold;
 }
 </style>
+<style>
+/* Galería scroll horizontal en móviles */
+.gallery {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+.gallery img {
+  flex: 0 0 auto;
+  width: 120px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+.gallery img:hover {
+  transform: scale(1.04);
+}
+
+/* Lightbox */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+...
+</style>
 
 <script>
 function openLightbox(src) {
