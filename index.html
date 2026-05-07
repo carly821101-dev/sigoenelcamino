@@ -3,330 +3,421 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>CriptoCharlyOne</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #020617, #0f172a, #0b1120);
-      color: white;
-      overflow-x: hidden;
+    html{
+      scroll-behavior:smooth;
     }
 
-    .container {
-      width: 90%;
-      max-width: 1300px;
-      margin: auto;
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,#020617,#0f172a,#0b1120);
+      color:white;
+      overflow-x:hidden;
     }
 
-    header {
-      width: 100%;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      backdrop-filter: blur(10px);
-      background: rgba(0,0,0,0.2);
-      position: sticky;
-      top: 0;
-      z-index: 999;
+    .container{
+      width:90%;
+      max-width:1300px;
+      margin:auto;
     }
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
+    header{
+      width:100%;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.2);
+      position:sticky;
+      top:0;
+      z-index:999;
     }
 
-    .logo {
-      font-size: 2rem;
-      font-weight: 800;
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
     }
 
-    .logo span {
-      color: #60a5fa;
+    .logo{
+      font-size:2rem;
+      font-weight:800;
     }
 
-    .menu {
-      display: flex;
-      gap: 25px;
+    .logo span{
+      color:#60a5fa;
     }
 
-    .menu a {
-      color: #d4d4d8;
-      text-decoration: none;
-      transition: 0.3s;
-      font-weight: 500;
+    .menu{
+      display:flex;
+      gap:25px;
     }
 
-    .menu a:hover {
-      color: white;
+    .menu a{
+      color:#d4d4d8;
+      text-decoration:none;
+      transition:0.3s;
+      font-weight:500;
     }
 
-    .hero {
-      min-height: auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      padding: 60px 0;
+    .menu a:hover{
+      color:white;
     }
 
-    .hero-text small {
-      color: #60a5fa;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-weight: 600;
+    .hero{
+      min-height:auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:40px;
+      padding:60px 0;
     }
 
-    .hero-text h1 {
-      font-size: clamp(3rem, 8vw, 5rem);
-      line-height: 0.95;
-      margin-top: 20px;
-      font-weight: 800;
+    .hero-text small{
+      color:#60a5fa;
+      text-transform:uppercase;
+      letter-spacing:4px;
+      font-weight:600;
     }
 
-    .hero-text h1 span {
-      color: #60a5fa;
-      display: block;
+    .hero-text h1{
+      font-size:clamp(3rem,8vw,5rem);
+      line-height:0.95;
+      margin-top:20px;
+      font-weight:800;
     }
 
-    .hero-text p {
-      margin-top: 25px;
-      color: #cbd5e1;
-      line-height: 1.8;
-      max-width: 600px;
-      font-size: 1.1rem;
+    .hero-text h1 span{
+      color:#60a5fa;
+      display:block;
     }
 
-    .buttons {
-      display: flex;
-      gap: 20px;
-      margin-top: 35px;
-      flex-wrap: wrap;
+    .hero-text p{
+      margin-top:25px;
+      color:#cbd5e1;
+      line-height:1.8;
+      max-width:600px;
+      font-size:1.1rem;
     }
 
-    .btn {
-      padding: 16px 32px;
-      border-radius: 18px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.3s;
-      display: inline-block;
+    .buttons{
+      display:flex;
+      gap:20px;
+      margin-top:35px;
+      flex-wrap:wrap;
     }
 
-    .btn-primary {
-      background: #f97316;
-      color: white;
-      box-shadow: 0 0 25px rgba(249,115,22,0.4);
+    .btn{
+      padding:16px 32px;
+      border-radius:18px;
+      font-weight:700;
+      text-decoration:none;
+      transition:0.3s;
+      display:inline-block;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: #fb923c;
+    .btn-primary{
+      background:#f97316;
+      color:white;
+      box-shadow:0 0 25px rgba(249,115,22,0.4);
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.15);
-      color: white;
+    .btn-primary:hover{
+      transform:translateY(-3px);
+      background:#fb923c;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.15);
+      color:white;
     }
 
-    .socials {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 40px;
-      max-width: 500px;
+    .btn-secondary:hover{
+      background:rgba(255,255,255,0.08);
     }
 
-    .social-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 25px;
-      text-align: center;
-      transition: 0.3s;
-      text-decoration: none;
-      color: white;
+    .socials{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      margin-top:40px;
+      max-width:500px;
     }
 
-    .social-card:hover {
-      transform: translateY(-5px);
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(96,165,250,0.5);
+    .social-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:25px;
+      text-align:center;
+      transition:0.3s;
+      text-decoration:none;
+      color:white;
     }
 
-    .social-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
+    .social-card:hover{
+      transform:translateY(-5px);
+      background:rgba(255,255,255,0.08);
+      border-color:rgba(96,165,250,0.5);
     }
 
-    .hero-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .social-icon{
+      font-size:2rem;
+      margin-bottom:10px;
     }
 
-    .glow {
-      position: absolute;
-      width: 450px;
-      height: 450px;
-      background: rgba(59,130,246,0.25);
-      border-radius: 50%;
-      filter: blur(80px);
+    .hero-image{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .image-box {
-      position: relative;
-      z-index: 2;
-      background: linear-gradient(to bottom, rgba(96,165,250,0.2), transparent);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 40px;
-      padding: 20px;
-      backdrop-filter: blur(10px);
+    .glow{
+      position:absolute;
+      width:450px;
+      height:450px;
+      background:rgba(59,130,246,0.25);
+      border-radius:50%;
+      filter:blur(80px);
     }
 
-    .image-box img {
-      width: 100%;
-      max-width: 360px;
-      border-radius: 30px;
-      object-fit: contain;
+    .image-box{
+      position:relative;
+      z-index:2;
+      background:linear-gradient(to bottom, rgba(96,165,250,0.2), transparent);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:40px;
+      padding:20px;
+      backdrop-filter:blur(10px);
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-      padding-bottom: 80px;
+    .image-box img{
+      width:100%;
+      max-width:360px;
+      border-radius:30px;
+      object-fit:contain;
     }
 
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 30px;
-      padding: 30px;
-      backdrop-filter: blur(10px);
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+      padding-bottom:80px;
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-      font-size: 1.3rem;
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:30px;
+      backdrop-filter:blur(10px);
     }
 
-    .card p {
-      color: #cbd5e1;
-      line-height: 1.7;
+    .card h3{
+      margin-bottom:15px;
+      font-size:1.3rem;
     }
 
-    @media(max-width: 980px) {
-      .hero {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .card p{
+      color:#cbd5e1;
+      line-height:1.7;
+    }
+
+    .history-section{
+      padding:80px 0;
+    }
+
+    .history-box{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:35px;
+      padding:50px;
+      backdrop-filter:blur(10px);
+    }
+
+    .history-box h2{
+      font-size:3rem;
+      margin-bottom:30px;
+      color:#60a5fa;
+    }
+
+    .history-box p{
+      color:#dbe4f0;
+      line-height:2;
+      margin-bottom:22px;
+      font-size:1.05rem;
+    }
+
+    .history-box blockquote{
+      margin-top:35px;
+      padding:25px;
+      border-left:4px solid #60a5fa;
+      background:rgba(255,255,255,0.04);
+      border-radius:18px;
+      color:white;
+      font-size:1.1rem;
+      font-style:italic;
+    }
+
+    footer{
+      border-top:1px solid rgba(255,255,255,0.08);
+      background:linear-gradient(90deg,#0b1120,#123b68);
+      padding:40px 0;
+      margin-top:60px;
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:30px;
+    }
+
+    .footer-icons{
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      margin-bottom:12px;
+      font-size:1.3rem;
+    }
+
+    .footer-icons a{
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+    }
+
+    .footer-icons a:hover{
+      transform:translateY(-3px);
+      color:#60a5fa;
+    }
+
+    @media(max-width:980px){
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
       }
 
-      .hero-text p {
-        margin-left: auto;
-        margin-right: auto;
+      .hero-text p{
+        margin-left:auto;
+        margin-right:auto;
       }
 
-      .buttons {
-        justify-content: center;
+      .buttons{
+        justify-content:center;
+        flex-direction:column;
+        align-items:center;
       }
 
-      .socials {
-        margin-left: auto;
-        margin-right: auto;
+      .btn{
+        width:100%;
+        max-width:320px;
+        text-align:center;
       }
 
-      .cards {
-        grid-template-columns: 1fr;
+      .socials{
+        margin-left:auto;
+        margin-right:auto;
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
       }
 
-      .hero-text h1 {
-        font-size: 3rem;
+      .cards{
+        grid-template-columns:1fr;
       }
 
-      .hero-image {
-        margin-top: 30px;
+      .hero-text h1{
+        font-size:3rem;
       }
 
-      .image-box {
-        padding: 10px;
-        border-radius: 25px;
+      .hero-image{
+        margin-top:30px;
       }
 
-      .image-box img {
-        max-width: 260px;
+      .image-box{
+        padding:10px;
+        border-radius:25px;
       }
 
-      .socials {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+      .image-box img{
+        max-width:260px;
       }
 
-      .social-card {
-        padding: 18px;
+      .social-card{
+        padding:18px;
       }
 
-      .logo {
-        font-size: 1.5rem;
+      .logo{
+        font-size:1.5rem;
       }
 
-      footer .container {
-        flex-direction: column;
-        text-align: center;
+      .menu{
+        display:none;
       }
 
-      .buttons {
-        flex-direction: column;
-        align-items: center;
+      .footer-content{
+        flex-direction:column;
+        text-align:center;
       }
 
-      .btn {
-        width: 100%;
-        max-width: 320px;
-        text-align: center;
+      .history-box{
+        padding:30px;
       }
 
-      .menu {
-        display: none;
+      .history-box h2{
+        font-size:2.2rem;
       }
+
     }
+
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="container">
+
     <nav>
-      <div class="logo">CRIPTO<span>CHARLYONE</span></div>
+
+      <div class="logo">
+        CRIPTO<span>CHARLYONE</span>
+      </div>
 
       <div class="menu">
-        <a href="#">Acerca de mí</a>
-        <a href="#">Mi Historia</a>
+        <a href="#mihistoria">Mi Historia</a>
         <a href="#">Trading</a>
+        <a href="#">IA</a>
         <a href="#">Redes</a>
       </div>
+
     </nav>
+
   </div>
 </header>
 
 <section class="hero container">
 
   <div class="hero-text">
-    <small>Bienvenido</small>
+
+    <small>Bienvenido a </small>
 
     <h1>
       CRIPTO
@@ -339,16 +430,18 @@
     </p>
 
     <div class="buttons">
-      <a href="secundaria.html" class="btn btn-primary">
+
+      <a href="#mihistoria" class="btn btn-primary">
         MI HISTORIA
       </a>
 
-      <a href="#" class="btn btn-secondary">
+      <a href="#redes" class="btn btn-secondary">
         MIS REDES
       </a>
+
     </div>
 
-    <div class="socials">
+    <div class="socials" id="redes">
 
       <a class="social-card" href="https://youtube.com/@criptocharlyone" target="_blank">
         <div class="social-icon">▶</div>
@@ -381,14 +474,17 @@
       </a>
 
     </div>
+
   </div>
 
   <div class="hero-image">
+
     <div class="glow"></div>
 
     <div class="image-box">
       <img src="tu-foto-sin-fondo.png" alt="CriptoCharlyOne">
     </div>
+
   </div>
 
 </section>
@@ -421,8 +517,65 @@
 
 </section>
 
-<footer style="border-top:1px solid rgba(255,255,255,0.08); background:linear-gradient(90deg,#0b1120,#123b68); padding:40px 0; margin-top:40px;">
-  <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:30px;">
+<section id="mihistoria" class="history-section">
+
+  <div class="container">
+
+    <div class="history-box">
+
+      <h2>Mi Historia</h2>
+
+      <p>
+        Mi nombre es <strong>Carlos Luis Rodríguez Rubio</strong>, aunque muchos me conocen como
+        <strong>CriptoCharlyOne</strong>.
+      </p>
+
+      <p>
+        Mi camino no comenzó con éxito ni estabilidad.
+        Comenzó con incertidumbre, ansiedad, deudas y momentos donde sentí que todo se derrumbaba.
+      </p>
+
+      <p>
+        Durante la pandemia perdí mi trabajo y atravesé una de las etapas más difíciles de mi vida.
+        Fue ahí donde entendí que debía transformar mi mente, mi disciplina y mi visión del futuro.
+      </p>
+
+      <p>
+        Descubrí el mundo del trading, las criptomonedas y las finanzas descentralizadas.
+        Aprendí, fallé, volví a levantarme y seguí avanzando.
+        Con el tiempo expandí mi visión mucho más allá del trading tradicional, explorando el ecosistema DeFi, pools de liquidez, yield farming, automatización con inteligencia artificial y nuevas tecnologías enfocadas en la libertad financiera.
+        Entendí que el verdadero crecimiento no depende solamente de una operación ganadora, sino de desarrollar disciplina, conocimiento y múltiples fuentes de ingreso sostenibles a largo plazo.
+        Hoy continúo evolucionando constantemente dentro del mundo financiero y tecnológico, buscando nuevas oportunidades y compartiendo ese proceso con las personas que siguen mi camino.
+      </p>
+      <p>
+        También enfrenté ansiedad y tinnitus, experiencias que cambiaron completamente mi forma de ver la vida.
+        Hoy aprendí a convivir con eso fortaleciendo mi mente, enfocándome en mi familia y manteniendo hábitos saludables.
+      </p>
+
+      <p>
+        Soy esposo, padre de familia y fundador de <strong>Credinicia</strong>,
+        un proyecto que comenzó con ventas a crédito y evolucionó hacia nuevas oportunidades financieras.
+      </p>
+
+      <p>
+        Este espacio representa mi proceso, mis aprendizajes y mi visión:
+        crecer constantemente, construir libertad financiera y compartir herramientas que puedan ayudar a otros.
+      </p>
+
+      <blockquote>
+        “No importa cuántas veces caigas.
+        Lo importante es seguir avanzando.”
+      </blockquote>
+
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <div class="container footer-content">
 
     <div>
       <h2 style="font-size:2.2rem; font-weight:800;">
@@ -431,20 +584,31 @@
     </div>
 
     <div style="text-align:center;">
-      <div style="display:flex; gap:18px; justify-content:center; margin-bottom:12px; font-size:1.3rem;">
-        <a href="https://youtube.com" target="_blank" style="color:white; text-decoration:none;">▶</a>
-        <a href="https://x.com" target="_blank" style="color:white; text-decoration:none;">𝕏</a>
-        <a href="https://telegram.org" target="_blank" style="color:white; text-decoration:none;">✈</a>
-        <a href="https://linkedin.com" target="_blank" style="color:white; text-decoration:none;">in</a>
-        <a href="https://instagram.com" target="_blank" style="color:white; text-decoration:none;">◎</a>
+
+      <div class="footer-icons">
+
+        <a href="https://youtube.com/@criptocharlyone" target="_blank">▶</a>
+
+        <a href="https://instagram.com/criptocharlyone" target="_blank">◎</a>
+
+        <a href="https://x.com" target="_blank">𝕏</a>
+
+        <a href="https://tiktok.com/@criptocharlyone" target="_blank">♪</a>
+
+        <a href="https://telegram.org" target="_blank">✈</a>
+
+        <a href="https://wa.me/595976802136" target="_blank">◉</a>
+
       </div>
 
       <p style="color:#e2e8f0; font-size:0.95rem; line-height:1.5; max-width:320px;">
         Seguime en mis redes sociales para estar al tanto de todas las novedades.
       </p>
+
     </div>
 
   </div>
+
 </footer>
 
 </body>
