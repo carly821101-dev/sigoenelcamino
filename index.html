@@ -71,7 +71,7 @@
     }
 
     .hero {
-      min-height: 90vh;
+      min-height: auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
@@ -87,7 +87,7 @@
     }
 
     .hero-text h1 {
-      font-size: 5rem;
+      font-size: clamp(3rem, 8vw, 5rem);
       line-height: 0.95;
       margin-top: 20px;
       font-weight: 800;
@@ -255,7 +255,49 @@
       }
 
       .hero-text h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
+      }
+
+      .hero-image {
+        margin-top: 30px;
+      }
+
+      .image-box {
+        padding: 10px;
+        border-radius: 25px;
+      }
+
+      .image-box img {
+        max-width: 260px;
+      }
+
+      .socials {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .social-card {
+        padding: 18px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      footer .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
       }
 
       .menu {
