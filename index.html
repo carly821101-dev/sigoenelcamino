@@ -208,7 +208,7 @@
 
     .image-box img{
       width:100%;
-      max-width:360px;
+      max-width:300px;
       border-radius:30px;
       object-fit:contain;
     }
@@ -236,6 +236,134 @@
     .card p{
       color:#cbd5e1;
       line-height:1.7;
+    }
+
+    .about-section{
+      padding:90px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title small{
+      color:#60a5fa;
+      letter-spacing:3px;
+      font-weight:700;
+    }
+
+    .section-title h2{
+      font-size:3rem;
+      margin-top:15px;
+    }
+
+    .section-title p{
+      color:#cbd5e1;
+      margin-top:15px;
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+    }
+
+    .about-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:35px;
+      transition:0.3s;
+      backdrop-filter:blur(10px);
+    }
+
+    .about-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(96,165,250,0.4);
+    }
+
+    .about-icon{
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .about-card h3{
+      margin-bottom:15px;
+    }
+
+    .about-card p{
+      color:#cbd5e1;
+      line-height:1.8;
+    }
+
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:25px;
+      margin-top:50px;
+    }
+
+    .stat-box{
+      text-align:center;
+      padding:35px;
+      border-radius:25px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .stat-box h3{
+      color:#60a5fa;
+      font-size:2rem;
+      margin-bottom:10px;
+    }
+
+    .stat-box p{
+      color:#cbd5e1;
+    }
+
+    .book-section{
+      padding:90px 0;
+    }
+
+    .book-wrapper{
+      display:grid;
+      grid-template-columns:380px 1fr;
+      gap:60px;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:40px;
+      padding:50px;
+      backdrop-filter:blur(10px);
+    }
+
+    .book-image{
+      text-align:center;
+    }
+
+    .book-image img{
+      width:100%;
+      max-width:320px;
+      border-radius:25px;
+      box-shadow:0 0 35px rgba(0,0,0,0.4);
+    }
+
+    .book-content small{
+      color:#60a5fa;
+      letter-spacing:3px;
+      font-weight:700;
+    }
+
+    .book-content h2{
+      font-size:3rem;
+      margin:20px 0;
+    }
+
+    .book-content p{
+      color:#dbe4f0;
+      line-height:2;
+      margin-bottom:20px;
     }
 
     .history-section{
@@ -339,8 +467,16 @@
         gap:12px;
       }
 
-      .cards{
+      .cards,
+      .about-grid,
+      .stats-grid{
         grid-template-columns:1fr;
+      }
+
+      .book-wrapper{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding:30px;
       }
 
       .hero-text h1{
@@ -357,7 +493,7 @@
       }
 
       .image-box img{
-        max-width:260px;
+        max-width:240px;
       }
 
       .social-card{
@@ -381,7 +517,9 @@
         padding:30px;
       }
 
-      .history-box h2{
+      .history-box h2,
+      .book-content h2,
+      .section-title h2{
         font-size:2.2rem;
       }
 
@@ -403,9 +541,9 @@
 
       <div class="menu">
         <a href="#mihistoria">Mi Historia</a>
-        <a href="#">Trading</a>
-        <a href="#">IA</a>
-        <a href="#">Redes</a>
+        <a href="#sobremi">Sobre Mí</a>
+        <a href="#libro">Libro</a>
+        <a href="#redes">Redes</a>
       </div>
 
     </nav>
@@ -517,6 +655,135 @@
 
 </section>
 
+<section id="sobremi" class="about-section">
+
+  <div class="container">
+
+    <div class="section-title">
+      <small>QUIÉN SOY</small>
+      <h2>Sobre Mí</h2>
+
+      <p>
+        Tecnología, blockchain, inteligencia artificial y libertad financiera.
+      </p>
+    </div>
+
+    <div class="about-grid">
+
+      <div class="about-card">
+        <div class="about-icon">💻</div>
+
+        <h3>Sistemas</h3>
+
+        <p>
+          Licenciado en Análisis de Sistemas, apasionado por la tecnología,
+          automatización y soluciones digitales.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">₿</div>
+
+        <h3>Blockchain</h3>
+
+        <p>
+          +6 años explorando criptomonedas, DeFi, pools de liquidez,
+          trading y ecosistemas descentralizados.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">🤖</div>
+
+        <h3>Inteligencia Artificial</h3>
+
+        <p>
+          Integración de IA para automatización, análisis de mercado
+          y productividad avanzada.
+        </p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-icon">🚀</div>
+
+        <h3>Libertad</h3>
+
+        <p>
+          Buscador incansable de libertad financiera y de tiempo,
+          construyendo múltiples fuentes de ingreso.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <h3>+6 años</h3>
+        <p>En el ecosistema crypto y blockchain</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>DeFi & IA</h3>
+        <p>Tecnología, automatización y finanzas descentralizadas</p>
+      </div>
+
+      <div class="stat-box">
+        <h3>Trading</h3>
+        <p>Análisis técnico, liquidez y estructura de mercado</p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="libro" class="book-section">
+
+  <div class="container">
+
+    <div class="book-wrapper">
+
+      <div class="book-image">
+        <img src="Caratula.jpg" alt="Cuando el Silencio Desaparece">
+      </div>
+
+      <div class="book-content">
+
+        <small>MI LIBRO</small>
+
+        <h2>
+          Cuando el Silencio Desaparece
+        </h2>
+
+        <p>
+          Una historia real sobre ansiedad, tinnitus y transformación personal.
+          Un libro donde comparto uno de los momentos más difíciles de mi vida
+          y cómo aprendí a encontrar paz en medio del caos.
+        </p>
+
+        <p>
+          Este libro representa mi proceso, mis miedos, mis aprendizajes
+          y la forma en que reconstruí mi mente mientras seguía avanzando.
+        </p>
+
+        <div class="buttons">
+
+          <a href="https://www.amazon.es/dp/B0GYVYL5HK" target="_blank" class="book-btn">Ver Libro</a>
+            VER LIBRO
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <section id="mihistoria" class="history-section">
 
   <div class="container">
@@ -547,6 +814,7 @@
         Entendí que el verdadero crecimiento no depende solamente de una operación ganadora, sino de desarrollar disciplina, conocimiento y múltiples fuentes de ingreso sostenibles a largo plazo.
         Hoy continúo evolucionando constantemente dentro del mundo financiero y tecnológico, buscando nuevas oportunidades y compartiendo ese proceso con las personas que siguen mi camino.
       </p>
+
       <p>
         También enfrenté ansiedad y tinnitus, experiencias que cambiaron completamente mi forma de ver la vida.
         Hoy aprendí a convivir con eso fortaleciendo mi mente, enfocándome en mi familia y manteniendo hábitos saludables.
