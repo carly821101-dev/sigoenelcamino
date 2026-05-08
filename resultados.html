@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trading Performance | CriptoCharlyOne</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a,#111827);
+  color:white;
+}
+
+.container{
+  width:90%;
+  max-width:1300px;
+  margin:auto;
+}
+
+header{
+  padding:30px 0;
+}
+
+.back-btn{
+  display:inline-block;
+  padding:14px 28px;
+  border-radius:16px;
+  text-decoration:none;
+  background:rgba(255,255,255,0.08);
+  color:white;
+  transition:0.3s;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.back-btn:hover{
+  background:#60a5fa;
+}
+
+.performance-section{
+  padding:40px 0 100px;
+}
+
+.performance-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.performance-title small{
+  color:#60a5fa;
+  letter-spacing:3px;
+  font-weight:700;
+}
+
+.performance-title h1{
+  font-size:4rem;
+  margin:20px 0;
+}
+
+.performance-title p{
+  max-width:850px;
+  margin:auto;
+  line-height:1.9;
+  color:#cbd5e1;
+}
+
+.top-info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+  margin-bottom:50px;
+}
+
+.info-card{
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:28px;
+  padding:35px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+}
+
+.info-card h3{
+  color:#60a5fa;
+  margin-bottom:15px;
+}
+
+.info-card p{
+  color:#e2e8f0;
+  font-weight:600;
+}
+
+.table-wrapper{
+  overflow-x:auto;
+}
+
+.performance-table{
+  width:100%;
+  border-collapse:collapse;
+  background:rgba(255,255,255,0.04);
+  border-radius:25px;
+  overflow:hidden;
+}
+
+.performance-table thead{
+  background:rgba(96,165,250,0.15);
+}
+
+.performance-table th{
+  padding:22px;
+  text-align:left;
+  color:white;
+}
+
+.performance-table td{
+  padding:20px 22px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  color:#dbe4f0;
+}
+
+.performance-table tr:hover{
+  background:rgba(255,255,255,0.03);
+}
+
+.profit{
+  color:#22c55e;
+  font-weight:700;
+}
+
+.mega-profit{
+  color:#4ade80;
+  font-size:1.1rem;
+}
+
+.summary-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:50px;
+}
+
+.summary-card{
+  background:linear-gradient(
+  135deg,
+  rgba(96,165,250,0.15),
+  rgba(255,255,255,0.03)
+  );
+
+  border:1px solid rgba(96,165,250,0.2);
+
+  border-radius:30px;
+
+  padding:35px;
+
+  text-align:center;
+}
+
+.summary-card h3{
+  font-size:2rem;
+  color:#60a5fa;
+  margin-bottom:10px;
+}
+
+.summary-card p{
+  color:#cbd5e1;
+}
+
+.performance-note{
+  margin-top:45px;
+  background:rgba(255,255,255,0.04);
+  border-left:4px solid #60a5fa;
+  border-radius:22px;
+  padding:35px;
+}
+
+.performance-note p{
+  line-height:1.9;
+  color:#dbe4f0;
+  margin-bottom:15px;
+}
+
+footer{
+  margin-top:80px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding:40px 0;
+  text-align:center;
+  color:#94a3b8;
+}
+
+@media(max-width:980px){
+
+  .top-info-grid{
+    grid-template-columns:1fr;
+  }
+
+  .summary-grid{
+    grid-template-columns:1fr;
+  }
+
+  .performance-title h1{
+    font-size:2.5rem;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">
+← Volver al Inicio
+</a>
+
+</div>
+
+</header>
+
+<section class="performance-section">
+
+<div class="container">
+
+<div class="performance-title">
+
+<small>TRADING PERFORMANCE</small>
+
+<h1>
+Resultados de Trading
+</h1>
+
+<p>
+Trading de criptomonedas enfocado principalmente en operaciones SHORT,
+siguiendo estructura de mercado, liquidez, fractalidad y tendencia predominante.
+</p>
+
+</div>
+
+<div class="top-info-grid">
+
+<div class="info-card">
+<h3>Capital Base</h3>
+<p>1000 USDT</p>
+</div>
+
+<div class="info-card">
+<h3>Pares Operados</h3>
+<p>ETH/USDT · ADA/USDT · SOL/USDT</p>
+</div>
+
+<div class="info-card">
+<h3>Enfoque</h3>
+<p>Shorts · Liquidez · Fractalidad</p>
+</div>
+
+</div>
+
+<div class="table-wrapper">
+
+<table class="performance-table">
+
+<thead>
+
+<tr>
+<th>Mes</th>
+<th>Profit</th>
+<th>Rentabilidad</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Mayo 2025</td>
+<td class="profit">+65.00 USDT</td>
+<td class="profit">+6.50%</td>
+</tr>
+
+<tr>
+<td>Junio 2025</td>
+<td class="profit">+108.83 USDT</td>
+<td class="profit">+10.88%</td>
+</tr>
+
+<tr>
+<td>Julio 2025</td>
+<td class="profit">+247.74 USDT</td>
+<td class="profit">+24.77%</td>
+</tr>
+
+<tr>
+<td>Agosto 2025</td>
+<td class="profit">+143.88 USDT</td>
+<td class="profit">+14.39%</td>
+</tr>
+
+<tr>
+<td>Septiembre 2025</td>
+<td class="profit">+325.63 USDT</td>
+<td class="profit">+32.56%</td>
+</tr>
+
+<tr>
+<td>Octubre 2025</td>
+<td class="profit">+320.81 USDT</td>
+<td class="profit">+32.08%</td>
+</tr>
+
+<tr>
+<td>Noviembre 2025</td>
+<td class="profit">+112.85 USDT</td>
+<td class="profit">+11.28%</td>
+</tr>
+
+<tr>
+<td>Diciembre 2025</td>
+<td class="profit">+272.48 USDT</td>
+<td class="profit">+27.25%</td>
+</tr>
+
+<tr>
+<td>Enero 2026</td>
+<td class="profit">+187.95 USDT</td>
+<td class="profit">+18.79%</td>
+</tr>
+
+<tr>
+<td>Febrero 2026</td>
+<td class="profit">+201.29 USDT</td>
+<td class="profit">+20.13%</td>
+</tr>
+
+<tr>
+<td>Marzo 2026</td>
+<td class="profit">+294.96 USDT</td>
+<td class="profit">+29.50%</td>
+</tr>
+
+<tr>
+<td>Abril 2026</td>
+<td class="profit mega-profit">+898.90 USDT</td>
+<td class="profit mega-profit">+89.89%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<div class="summary-grid">
+
+<div class="summary-card">
+<h3>+3180.32 USDT</h3>
+<p>Profit Total Acumulado</p>
+</div>
+
+<div class="summary-card">
+<h3>+318.03%</h3>
+<p>Rentabilidad Acumulada</p>
+</div>
+
+<div class="summary-card">
+<h3>+265.03 USDT</h3>
+<p>Promedio Mensual</p>
+</div>
+
+<div class="summary-card">
+<h3>12 / 12</h3>
+<p>Meses Positivos</p>
+</div>
+
+</div>
+
+<div class="performance-note">
+
+<p>
+Los resultados mostrados representan el balance neto final de cada mes,
+incluyendo ganancias y pérdidas generadas durante las operaciones realizadas en el período.
+</p>
+
+<p>
+El enfoque principal está en mantener una relación riesgo/beneficio positiva
+y una consistencia rentable a largo plazo.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 CriptoCharlyOne · Trading · Blockchain · IA
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
