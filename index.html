@@ -942,22 +942,65 @@ setInterval(loadFearGreed,300000);
 
 
 
+
+
+<style>
+.ref-grid{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:25px}
+.ref-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:18px;border-radius:20px;text-align:center;width:220px;backdrop-filter:blur(10px);transition:.3s}
+.ref-card:hover{transform:translateY(-4px)}
+.ref-logo{font-size:2.5rem;margin-bottom:10px}
+.binance{color:#F3BA2F}
+.bitget{color:#00E5FF}
+.ref-btn{display:inline-block;background:#2563eb;color:white;text-decoration:none;padding:10px 18px;border-radius:25px;margin-top:12px}
+</style>
+<div class="container">
+
+<div style="text-align:center;margin-bottom:25px;">
+<h2 style="font-size:2rem;color:white;display:flex;justify-content:center;align-items:center;gap:12px;">
+<i class="fa-solid fa-layer-group" style="color:#60a5fa;"></i>
+<span>Plataformas que Utilizo</span>
+</h2>
+<p style="color:#cbd5e1;">
+Los exchanges que utilizo para trading y criptomonedas.
+</p>
+</div>
+<div class="ref-grid">
+<div class="ref-card">
+<div class="ref-logo binance"><i class="fa-brands fa-bitcoin"></i></div>
+<h3>Binance</h3>
+<a class="ref-btn" target="_blank" href="https://www.binance.com/referral/earn-together/refer2earn-usdc/claim?hl=es&ref=GRO_28502_EQPLE&utm_source=referral_entrance">Crear cuenta</a>
+</div>
+
+<div class="ref-card">
+<div class="ref-logo bitget"><i class="fa-solid fa-chart-simple"></i></div>
+<h3>Bitget</h3>
+<a class="ref-btn" target="_blank" href="https://www.bitgetapps.com/es/referral/register?clacCode=W1NYCJTM&from=%2Fes%2Fevents%2Freferral-all-program&source=events&utmSource=PremierInviter">Crear cuenta</a>
+</div>
+</div>
+</div>
+</div>
 <a class="whatsapp-float" href="https://wa.me/595976802136"><i class="fa-brands fa-whatsapp"></i></a>
+
 <script>
 async function loadPrices(){
-let r=await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,binancecoin,ripple,cardano,dogecoin,tron,sui,avalanche-2');
-let d=await r.json();
+try{
+const r = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,binancecoin,ripple,cardano,dogecoin,tron,sui,avalanche-2');
+const d = await r.json();
 let h='';
 d.forEach(c=>{
 let cls=c.price_change_percentage_24h>=0?'up':'down';
 let arrow=c.price_change_percentage_24h>=0?'▲':'▼';
-h+=`<span class="${cls}" style="margin-right:25px">${c.symbol.toUpperCase()} $${c.current_price} ${arrow} ${c.price_change_percentage_24h.toFixed(2)}%</span>`;
+h += `<span class="${cls}" style="margin-right:25px">${c.symbol.toUpperCase()} $${c.current_price} ${arrow} ${c.price_change_percentage_24h.toFixed(2)}%</span>`;
 });
 document.getElementById('ticker-content').innerHTML=h;
+}catch(e){
+document.getElementById('ticker-content').innerHTML='BTC • ETH • SOL • XRP • BNB';
+}
 }
 loadPrices();
 setInterval(loadPrices,60000);
 </script>
+
 
 <style>
 .market-grid{
