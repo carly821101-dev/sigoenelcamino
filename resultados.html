@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
@@ -21,10 +22,15 @@
   box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:'Poppins',sans-serif;
   background:linear-gradient(135deg,#020617,#0f172a,#111827);
   color:white;
+  overflow-x:hidden;
 }
 
 .container{
@@ -33,12 +39,60 @@ body{
   margin:auto;
 }
 
+/* Ticker (igual al index) */
+.crypto-ticker{
+  background:#050816;
+  padding:10px;
+  overflow:hidden;
+  white-space:nowrap;
+  border-bottom:1px solid rgba(255,255,255,.1);
+  font-weight:700;
+}
+
+#ticker-content{
+  display:inline-block;
+  padding-left:100%;
+  animation:ticker 35s linear infinite;
+}
+
+.up{color:#22c55e;}
+.down{color:#ef4444;}
+
+@keyframes ticker{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100%)}
+}
+
 header{
-  padding:30px 0;
+  width:100%;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  backdrop-filter:blur(10px);
+  background:rgba(0,0,0,0.2);
+  position:sticky;
+  top:0;
+  z-index:999;
+  padding:20px 0;
+}
+
+header nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-size:1.6rem;
+  font-weight:800;
+}
+
+.logo span{
+  color:#60a5fa;
 }
 
 .back-btn{
-  display:inline-block;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
   padding:14px 28px;
   border-radius:16px;
   text-decoration:none;
@@ -46,14 +100,16 @@ header{
   color:white;
   transition:0.3s;
   border:1px solid rgba(255,255,255,0.08);
+  font-weight:600;
 }
 
 .back-btn:hover{
   background:#60a5fa;
+  transform:translateY(-2px);
 }
 
 .performance-section{
-  padding:40px 0 100px;
+  padding:60px 0 100px;
 }
 
 .performance-title{
@@ -68,8 +124,13 @@ header{
 }
 
 .performance-title h1{
-  font-size:4rem;
+  font-size:clamp(2.5rem,6vw,4rem);
   margin:20px 0;
+  font-weight:800;
+}
+
+.performance-title h1 span{
+  color:#60a5fa;
 }
 
 .performance-title p{
@@ -93,26 +154,41 @@ header{
   padding:35px;
   text-align:center;
   backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.info-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(96,165,250,0.4);
+}
+
+.info-icon{
+  font-size:2rem;
+  margin-bottom:15px;
 }
 
 .info-card h3{
   color:#60a5fa;
   margin-bottom:15px;
+  font-size:1.1rem;
 }
 
 .info-card p{
   color:#e2e8f0;
   font-weight:600;
+  line-height:1.6;
 }
 
 .table-wrapper{
   overflow-x:auto;
+  border-radius:25px;
 }
 
 .performance-table{
   width:100%;
   border-collapse:collapse;
   background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
   border-radius:25px;
   overflow:hidden;
 }
@@ -131,6 +207,10 @@ header{
   padding:20px 22px;
   border-bottom:1px solid rgba(255,255,255,0.05);
   color:#dbe4f0;
+}
+
+.performance-table tr:last-child td{
+  border-bottom:none;
 }
 
 .performance-table tr:hover{
@@ -173,6 +253,12 @@ header{
   padding:35px;
 
   text-align:center;
+
+  transition:0.3s;
+}
+
+.summary-card:hover{
+  transform:translateY(-6px);
 }
 
 .summary-card h3{
@@ -188,6 +274,7 @@ header{
 .performance-note{
   margin-top:45px;
   background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
   border-left:4px solid #60a5fa;
   border-radius:22px;
   padding:35px;
@@ -199,12 +286,51 @@ header{
   margin-bottom:15px;
 }
 
+.performance-note p:last-child{
+  margin-bottom:0;
+}
+
 footer{
-  margin-top:80px;
   border-top:1px solid rgba(255,255,255,0.08);
+  background:linear-gradient(90deg,#0b1120,#123b68);
   padding:40px 0;
-  text-align:center;
-  color:#94a3b8;
+  margin-top:20px;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
+
+.footer-icons{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin-bottom:12px;
+  font-size:1.3rem;
+}
+
+.footer-icons a{
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.footer-icons a:hover{
+  transform:translateY(-3px);
+  color:#60a5fa;
+}
+
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  font-size:55px;
+  color:#25D366;
+  z-index:9999;
 }
 
 @media(max-width:980px){
@@ -214,11 +340,24 @@ footer{
   }
 
   .summary-grid{
-    grid-template-columns:1fr;
+    grid-template-columns:repeat(2,1fr);
   }
 
   .performance-title h1{
     font-size:2.5rem;
+  }
+
+  .footer-content{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+@media(max-width:560px){
+
+  .summary-grid{
+    grid-template-columns:1fr;
   }
 
 }
@@ -229,13 +368,23 @@ footer{
 
 <body>
 
+<div class="crypto-ticker"><span id="ticker-content">Cargando mercado...</span></div>
+
 <header>
 
 <div class="container">
 
+<nav>
+
+<div class="logo">
+CRIPTO<span>CHARLYONE</span>
+</div>
+
 <a href="index.html" class="back-btn">
-← Volver al Inicio
+<i class="fa-solid fa-arrow-left"></i> Volver al Inicio
 </a>
+
+</nav>
 
 </div>
 
@@ -250,7 +399,7 @@ footer{
 <small>TRADING PERFORMANCE</small>
 
 <h1>
-Resultados de Trading
+Resultados de <span>Trading</span>
 </h1>
 
 <p>
@@ -263,16 +412,19 @@ siguiendo estructura de mercado, liquidez, fractalidad y tendencia predominante.
 <div class="top-info-grid">
 
 <div class="info-card">
+<div class="info-icon"><i class="fa-solid fa-sack-dollar" style="color:#60a5fa;"></i></div>
 <h3>Capital Base</h3>
 <p>1000 USDT</p>
 </div>
 
 <div class="info-card">
-<h3>Pares Operados</h3>
-<p>ETH/USDT · ADA/USDT · SOL/USDT</p>
+<div class="info-icon"><i class="fa-solid fa-building-columns" style="color:#f97316;"></i></div>
+<h3>Mercados Operados</h3>
+<p>Operaciones en Bolsa (Acciones) y Criptomonedas</p>
 </div>
 
 <div class="info-card">
+<div class="info-icon"><i class="fa-solid fa-crosshairs" style="color:#22c55e;"></i></div>
 <h3>Enfoque</h3>
 <p>Plan · Liquidez · Fractalidad</p>
 </div>
@@ -380,6 +532,12 @@ siguiendo estructura de mercado, liquidez, fractalidad y tendencia predominante.
 <td class="loss">-62.67%</td>
 </tr>
 
+<tr>
+<td>Julio 2026</td>
+<td class="loss">-57.33 USDT</td>
+<td class="loss">-5.73%</td>
+</tr>
+
 </tbody>
 
 
@@ -390,22 +548,22 @@ siguiendo estructura de mercado, liquidez, fractalidad y tendencia predominante.
 <div class="summary-grid">
 
 <div class="summary-card">
-<h3>+2636.02 USDT</h3>
+<h3>+2578.69 USDT</h3>
 <p>Profit Total Acumulado</p>
 </div>
 
 <div class="summary-card">
-<h3>+263.60%</h3>
+<h3>+257.86%</h3>
 <p>Rentabilidad Acumulada</p>
 </div>
 
 <div class="summary-card">
-<h3>+188.29 USDT</h3>
+<h3>+171.91 USDT</h3>
 <p>Promedio Mensual</p>
 </div>
 
 <div class="summary-card">
-<h3>13 / 14</h3>
+<h3>13 / 15</h3>
 <p>Meses Positivos</p>
 </div>
 
@@ -431,15 +589,63 @@ Esta sección muestra el desempeño real de la cuenta sin filtros ni omisiones, 
 
 <footer>
 
-<div class="container">
+<div class="container footer-content">
 
-<p>
+<div>
+<h2 style="font-size:2rem; font-weight:800;">
+CRIPTO<span style="color:#60a5fa;">CHARLYONE</span>
+</h2>
+</div>
+
+<div style="text-align:center;">
+
+<div class="footer-icons">
+
+<a href="https://youtube.com/@criptocharlyone" target="_blank"><i class="fa-brands fa-youtube" style="color:#ff0000"></i></a>
+
+<a href="https://instagram.com/criptocharlyone" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+<a href="https://x.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+
+<a href="https://tiktok.com/@criptocharlyone" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+
+<a href="https://telegram.org" target="_blank"><i class="fa-brands fa-telegram" style="color:#29b6f6"></i></a>
+
+<a href="https://wa.me/595976802136" target="_blank"><i class="fa-brands fa-whatsapp" style="color:#25D366"></i></a>
+
+</div>
+
+<p style="color:#e2e8f0; font-size:0.95rem; line-height:1.5; max-width:320px;">
 © 2026 CriptoCharlyOne · Trading · Blockchain · IA
 </p>
 
 </div>
 
+</div>
+
 </footer>
+
+<a class="whatsapp-float" href="https://wa.me/595976802136"><i class="fa-brands fa-whatsapp"></i></a>
+
+<script>
+async function loadPrices(){
+try{
+const r = await fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin,ethereum,solana,binancecoin,ripple,cardano,dogecoin,tron,sui,avalanche-2');
+const d = await r.json();
+let h='';
+d.forEach(c=>{
+let cls=c.price_change_percentage_24h>=0?'up':'down';
+let arrow=c.price_change_percentage_24h>=0?'▲':'▼';
+h += `<span class="${cls}" style="margin-right:25px">${c.symbol.toUpperCase()} $${c.current_price} ${arrow} ${c.price_change_percentage_24h.toFixed(2)}%</span>`;
+});
+document.getElementById('ticker-content').innerHTML=h;
+}catch(e){
+document.getElementById('ticker-content').innerHTML='BTC • ETH • SOL • XRP • BNB';
+}
+}
+loadPrices();
+setInterval(loadPrices,60000);
+</script>
 
 </body>
 
