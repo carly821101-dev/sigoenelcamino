@@ -231,6 +231,12 @@
       backdrop-filter:blur(6px);
     }
 
+    .stock-badge.vendido{
+      background:rgba(239,68,68,0.18);
+      border:1px solid rgba(239,68,68,0.5);
+      color:#ef4444;
+    }
+
     .product-body{
       padding:24px 22px 26px;
       display:flex;
@@ -480,6 +486,28 @@
 
     <div class="product-grid">
 
+      <!-- Notebook Lenovo Yoga Táctil -->
+      <div class="product-card">
+        <div class="product-image">
+          <span class="stock-badge vendido">VENDIDO</span>
+          <img src="img/lenovo-yoga-tactil.jpg" alt="Notebook Lenovo Yoga i5 7ma generación pantalla táctil">
+        </div>
+        <div class="product-body">
+          <div class="product-cat">Notebook · Convertible</div>
+          <h3>Lenovo Yoga · Pantalla Táctil</h3>
+          <ul class="spec-list">
+            <li><i class="fa-solid fa-microchip"></i> Intel Core i5 7ma generación</li>
+            <li><i class="fa-solid fa-memory"></i> 16GB RAM</li>
+            <li><i class="fa-solid fa-hard-drive"></i> SSD 512GB</li>
+            <li><i class="fa-solid fa-display"></i> Pantalla táctil 15"</li>
+            <li><i class="fa-solid fa-hand-pointer"></i> Diseño convertible 2 en 1</li>
+          </ul>
+          <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20Lenovo%20Yoga%20T%C3%A1ctil%2C%20%C2%BFme%20pasas%20info%3F">
+            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
       <!-- Notebook Acer i3 -->
       <div class="product-card">
         <div class="product-image">
@@ -505,7 +533,7 @@
       <!-- Notebook HP 14" -->
       <div class="product-card">
         <div class="product-image">
-          <span class="stock-badge">DISPONIBLE</span>
+          <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/hp-14.png" alt="Notebook HP 14 pulgadas">
         </div>
         <div class="product-body">
@@ -592,7 +620,7 @@
       <!-- Mousepad Samurai -->
       <div class="product-card">
         <div class="product-image">
-          <span class="stock-badge">DISPONIBLE</span>
+          <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/mousepad-samurai.png" alt="Mousepad Gamer XL Samurai">
         </div>
         <div class="product-body">
