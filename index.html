@@ -147,11 +147,67 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 1.45rem;
       font-weight: 800;
       letter-spacing: -0.6px;
       text-decoration: none;
       color: var(--text);
+    }
+
+    .logo-bull-wrap {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      isolation: isolate;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-bull-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from var(--angle, 0deg),
+        transparent 0%,
+        transparent 35%,
+        var(--btc) 50%,
+        transparent 65%,
+        transparent 100%
+      );
+      z-index: -2;
+      animation: spinBorder 4s linear infinite;
+    }
+
+    .logo-bull-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 50%;
+      background: #0c0c0c;
+      z-index: -1;
+    }
+
+    .logo-bull {
+      width: 72%;
+      height: 72%;
+      object-fit: contain;
+      border-radius: 50%;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 0 6px var(--btc-glow));
+      transition: var(--ease);
+    }
+
+    .logo:hover .logo-bull {
+      filter: drop-shadow(0 0 12px var(--btc-glow));
+      transform: scale(1.06);
     }
 
     .logo span { color: var(--btc); }
@@ -433,12 +489,39 @@
     .image-box {
       position: relative;
       z-index: 2;
+      isolation: isolate;
       background: linear-gradient(155deg, rgba(247, 147, 26, 0.12), rgba(255, 255, 255, 0.02));
-      border: 1px solid rgba(247, 147, 26, 0.18);
       border-radius: 28px;
       padding: 16px;
       backdrop-filter: blur(12px);
       box-shadow: 0 28px 55px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Rotating conic glow around photo (same as nav-pill) */
+    .image-box::before {
+      content: '';
+      position: absolute;
+      inset: -2.5px;
+      border-radius: 30px;
+      background: conic-gradient(
+        from var(--angle, 0deg),
+        transparent 0%,
+        transparent 35%,
+        var(--btc) 50%,
+        transparent 65%,
+        transparent 100%
+      );
+      z-index: -2;
+      animation: spinBorder 4s linear infinite;
+    }
+
+    .image-box::after {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 27px;
+      background: #0c0c0c;
+      z-index: -1;
     }
 
     .image-box img {
@@ -447,6 +530,8 @@
       border-radius: 20px;
       display: block;
       object-fit: contain;
+      position: relative;
+      z-index: 1;
     }
 
     /* ========== FEATURE CARDS ========== */
@@ -503,6 +588,50 @@
       background: var(--btc-dim);
       color: var(--btc);
       border: 1px solid rgba(247, 147, 26, 0.2);
+      position: relative;
+    }
+
+    /* Bull with BTC laser eyes */
+    .bull-icon {
+      overflow: visible;
+    }
+
+    .bull-icon .laser-eye {
+      position: absolute;
+      top: 14px;
+      width: 4px;
+      height: 4px;
+      background: var(--btc);
+      border-radius: 50%;
+      box-shadow: 0 0 6px 2px var(--btc), 0 0 12px 4px rgba(247, 147, 26, 0.6);
+      animation: laserPulse 1.6s ease-in-out infinite;
+    }
+
+    .bull-icon .laser-eye.left { left: 16px; }
+    .bull-icon .laser-eye.right { right: 16px; }
+
+    .bull-icon .laser-eye::after {
+      content: '₿';
+      position: absolute;
+      top: -2px;
+      left: 50%;
+      transform: translateX(-50%) scale(0.55);
+      font-size: 10px;
+      font-weight: 800;
+      color: var(--btc);
+      text-shadow: 0 0 8px var(--btc), 0 0 14px rgba(247, 147, 26, 0.8);
+      opacity: 0.95;
+      animation: laserBeam 1.6s ease-in-out infinite;
+    }
+
+    @keyframes laserPulse {
+      0%, 100% { box-shadow: 0 0 4px 1px var(--btc), 0 0 8px 2px rgba(247, 147, 26, 0.5); }
+      50% { box-shadow: 0 0 8px 3px var(--btc), 0 0 16px 6px rgba(247, 147, 26, 0.85); }
+    }
+
+    @keyframes laserBeam {
+      0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(0.5); }
+      50% { opacity: 1; transform: translateX(-50%) scale(0.65); }
     }
 
     .feature-card h3 {
@@ -810,6 +939,91 @@
       box-shadow: 0 6px 20px var(--btc-glow);
     }
 
+    /* Spinning BTC B with running glow */
+    .btc-wallpaper {
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .btc-b-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+      transition: var(--ease);
+    }
+
+    .btc-b-link:hover {
+      transform: translateY(-4px);
+    }
+
+    .btc-b-link span {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-sec);
+      letter-spacing: 0.3px;
+    }
+
+    .btc-b-link:hover span {
+      color: var(--btc);
+    }
+
+    .btc-b-wrapper {
+      position: relative;
+      width: 72px;
+      height: 72px;
+      isolation: isolate;
+    }
+
+    .btc-b-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(
+        from var(--angle, 0deg),
+        transparent 0%,
+        transparent 30%,
+        var(--btc) 50%,
+        transparent 70%,
+        transparent 100%
+      );
+      z-index: -2;
+      animation: spinBorder 3s linear infinite;
+    }
+
+    .btc-b-wrapper::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border-radius: 50%;
+      background: #0c0c0c;
+      z-index: -1;
+    }
+
+    .btc-b {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--btc);
+      text-shadow: 0 0 18px var(--btc-glow), 0 0 36px rgba(247, 147, 26, 0.4);
+      animation: spinB 8s linear infinite;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes spinB {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
     /* ========== FOOTER ========== */
     footer {
       border-top: 1px solid var(--border);
@@ -1027,7 +1241,12 @@
   <header id="header">
     <div class="container">
       <nav>
-        <a href="#" class="logo">CRIPTO<span>CHARLYONE</span></a>
+        <a href="#" class="logo">
+          <div class="logo-bull-wrap">
+            <img src="bull-btc.png" alt="Bull BTC" class="logo-bull">
+          </div>
+          CRIPTO<span>CHARLYONE</span>
+        </a>
 
         <div class="nav-pill">
           <a href="#mihistoria">Historia</a>
@@ -1134,8 +1353,10 @@
     <div class="container">
       <div class="features-grid">
         <div class="feature-card reveal">
-          <div class="feature-icon">
-            <i class="fa-solid fa-chart-candlestick"></i>
+          <div class="feature-icon bull-icon">
+            <i class="fa-solid fa-bull"></i>
+            <span class="laser-eye left"></span>
+            <span class="laser-eye right"></span>
           </div>
           <h3>Trading</h3>
           <p>Estructura de mercado, liquidez y análisis técnico sin promesas mágicas. Solo proceso y disciplina.</p>
@@ -1244,7 +1465,7 @@
       <div class="history-block reveal">
         <h2>Mi historia</h2>
         <p>
-          Me llamo <strong>Carlos Luis Rodríguez Rubio</strong>. En internet me conocen como
+          Me llamo <strong>Carlos</strong>. En internet me conocen como
           <strong>CriptoCharlyOne</strong>.
         </p>
         <p>
@@ -1258,7 +1479,7 @@
         </p>
         <p>
           Entré al trading y a las criptomonedas. Aprendí, perdí, volví a intentarlo.
-          Con el tiempo amplií el enfoque: DeFi, pools de liquidez, yield farming,
+          Con el tiempo amplié el enfoque: DeFi, pools de liquidez, yield farming,
           automatización con IA y todo lo que pudiera acercarme a más independencia.
         </p>
         <p>
@@ -1313,6 +1534,23 @@
             Crear cuenta
           </a>
         </div>
+        <div class="ref-card reveal">
+          <div class="ref-logo"><i class="fa-solid fa-bolt"></i></div>
+          <h3>Quantfury</h3>
+          <a class="ref-btn" target="_blank" rel="noopener" href="https://onelink.to/quantfury-es">
+            Crear cuenta
+          </a>
+        </div>
+      </div>
+
+      <!-- Whitepaper de Satoshi -->
+      <div class="btc-wallpaper reveal">
+        <a href="https://bitcoin.org/files/bitcoin-paper/bitcoin_es.pdf" target="_blank" rel="noopener" class="btc-b-link">
+          <div class="btc-b-wrapper">
+            <div class="btc-b">₿</div>
+          </div>
+          <span>Whitepaper de Satoshi Nakamoto</span>
+        </a>
       </div>
     </div>
   </section>
@@ -1320,7 +1558,8 @@
   <!-- Footer -->
   <footer>
     <div class="container footer-content">
-      <div class="footer-logo">
+      <div class="footer-logo" style="display:flex;align-items:center;gap:10px;">
+        <img src="bull-btc.png" alt="" style="width:32px;height:32px;object-fit:contain;filter:drop-shadow(0 0 6px var(--btc-glow));">
         CRIPTO<span>CHARLYONE</span>
       </div>
       <div style="text-align:center">
@@ -1336,6 +1575,11 @@
           Seguime en mis redes para enterarte de lo nuevo.
         </p>
       </div>
+    </div>
+    <div class="container" style="text-align:center; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--border);">
+      <p style="color: var(--text-muted); font-size: 0.82rem;">
+        © 2026 CriptoCharlyOne. Todos los derechos reservados.
+      </p>
     </div>
   </footer>
 
