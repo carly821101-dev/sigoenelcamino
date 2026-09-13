@@ -1,256 +1,588 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trading y Psicología | CriptoCharlyOne</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Trading y Psicología — La mente del trader, disciplina y control emocional. CriptoCharlyOne." />
+  <title>Trading y Psicología | CriptoCharlyOne</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-<style>
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --bg-elevated: #111111;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --bg-card-hover: rgba(255, 255, 255, 0.055);
+      --border: rgba(255, 255, 255, 0.07);
+      --text: #f5f5f5;
+      --text-sec: #a1a1aa;
+      --text-muted: #71717a;
+      --btc: #F7931A;
+      --btc-glow: rgba(247, 147, 26, 0.35);
+      --btc-dim: rgba(247, 147, 26, 0.12);
+      --green: #22c55e;
+      --red: #ef4444;
+      --radius: 18px;
+      --radius-lg: 26px;
+      --ease: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#020617,#0f172a,#0b1120);
-color:white;
-overflow-x:hidden;
-}
+    html { scroll-behavior: smooth; }
 
-.container{
-width:90%;
-max-width:1300px;
-margin:auto;
-}
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-.back-btn{
-display:inline-flex;
-align-items:center;
-gap:10px;
-margin-top:40px;
-text-decoration:none;
-color:white;
-padding:15px 25px;
-border-radius:20px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-transition:.3s;
-}
+    body::before {
+      content: '';
+      position: fixed;
+      top: -25%;
+      left: -15%;
+      width: 55vw;
+      height: 55vw;
+      background: radial-gradient(circle, var(--btc-dim) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: -1;
+      animation: floatOrb 22s ease-in-out infinite;
+    }
 
-.back-btn:hover{
-background:rgba(255,255,255,.08);
-transform:translateY(-3px);
-}
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -20%;
+      right: -12%;
+      width: 48vw;
+      height: 48vw;
+      background: radial-gradient(circle, rgba(247, 147, 26, 0.07) 0%, transparent 65%);
+      pointer-events: none;
+      z-index: -1;
+      animation: floatOrb 28s ease-in-out infinite reverse;
+    }
 
-.hero{
-text-align:center;
-padding:80px 0;
-}
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(25px, -35px) scale(1.06); }
+    }
 
-.hero i{
-font-size:5rem;
-color:#60a5fa;
-margin-bottom:20px;
-}
+    .container {
+      width: 92%;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
 
-.hero h1{
-font-size:4rem;
-font-weight:800;
-margin-bottom:25px;
-}
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      
+      background: rgba(10, 10, 10, 0.82);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--ease);
+    }
 
-.hero p{
-max-width:900px;
-margin:auto;
-color:#cbd5e1;
-line-height:2;
-font-size:1.2rem;
-}
+    header.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-gap:25px;
-padding-bottom:100px;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
 
-.card{
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:30px;
-padding:35px;
-backdrop-filter:blur(15px);
-transition:.3s;
-}
+    .logo {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      text-decoration: none;
+      color: var(--text);
+    }
 
-.card:hover{
-transform:translateY(-6px);
-border-color:#60a5fa;
-box-shadow:0 0 30px rgba(96,165,250,.2);
-}
+    .logo span { color: var(--btc); }
 
-.icon{
-font-size:2.5rem;
-margin-bottom:20px;
-color:#60a5fa;
-}
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      background: var(--bg-card);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid var(--border);
+      transition: var(--ease);
+    }
 
-.card h2{
-font-size:1.5rem;
-margin-bottom:20px;
-}
+    .back-btn:hover {
+      background: var(--btc-dim);
+      border-color: rgba(247, 147, 26, 0.35);
+      color: var(--btc);
+      transform: translateY(-2px);
+    }
 
-.card p{
-color:#cbd5e1;
-line-height:1.9;
-}
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 70px 0 50px;
+    }
 
-.final{
-margin-bottom:100px;
-padding:50px;
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.1);
-border-radius:35px;
-text-align:center;
-backdrop-filter:blur(15px);
-}
+    .hero-icon-wrap {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      background: var(--btc-dim);
+      border: 1px solid rgba(247, 147, 26, 0.3);
+      color: var(--btc);
+      font-size: 2.4rem;
+      box-shadow: 0 0 40px var(--btc-dim);
+      position: relative;
+    }
 
-.final i{
-font-size:4rem;
-color:#f59e0b;
-margin-bottom:25px;
-}
+    .hero-icon-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--btc-glow) 0%, transparent 70%);
+      opacity: 0.5;
+      z-index: -1;
+      animation: pulseGlow 3.5s ease-in-out infinite;
+    }
 
-.final p{
-font-size:1.2rem;
-line-height:2;
-color:#dbe4f0;
-}
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.65; transform: scale(1.12); }
+    }
 
-@media(max-width:768px){
+    .hero .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--btc-dim);
+      border: 1px solid rgba(247, 147, 26, 0.25);
+      color: var(--btc);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
 
-.hero h1{
-font-size:2.8rem;
-}
+    .hero h1 {
+      font-size: clamp(2.4rem, 5.5vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
 
-.grid{
-grid-template-columns:1fr;
-}
+    .hero h1 span { color: var(--btc); }
 
-}
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--text-sec);
+      font-size: 1.1rem;
+      line-height: 1.85;
+      font-style: italic;
+    }
 
-</style>
+    /* Grid cards */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding-bottom: 60px;
+    }
+
+    .card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      overflow: hidden;
+      transition: var(--ease);
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, var(--btc-glow) 0%, transparent 70%);
+      opacity: 0.25;
+      pointer-events: none;
+      transition: var(--ease);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(247, 147, 26, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      background: var(--bg-card-hover);
+    }
+
+    .card:hover::before { opacity: 0.55; }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      background: var(--btc-dim);
+      border: 1px solid rgba(247, 147, 26, 0.22);
+      color: var(--btc);
+      font-size: 1.25rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 20px var(--btc-dim);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card p {
+      color: var(--text-sec);
+      font-size: 0.98rem;
+      line-height: 1.75;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Final quote */
+    .final {
+      position: relative;
+      margin-bottom: 90px;
+      padding: 48px 40px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .final::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, var(--btc-glow) 0%, transparent 70%);
+      opacity: 0.2;
+      pointer-events: none;
+    }
+
+    .final-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      background: var(--btc-dim);
+      border: 1px solid rgba(247, 147, 26, 0.3);
+      color: var(--btc);
+      font-size: 1.8rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 32px var(--btc-dim);
+    }
+
+    .final p {
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: var(--text-sec);
+      max-width: 720px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .final p strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      background: #080808;
+      padding: 48px 0 40px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 28px;
+    }
+
+    .footer-logo {
+      font-size: 1.55rem;
+      font-weight: 800;
+    }
+
+    .footer-logo span { color: var(--btc); }
+
+    .footer-icons {
+      display: flex;
+      gap: 18px;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .footer-icons a {
+      color: var(--text-sec);
+      transition: var(--ease);
+    }
+
+    .footer-icons a:hover {
+      color: var(--btc);
+      transform: translateY(-3px);
+    }
+
+    .footer-text {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      max-width: 280px;
+      text-align: center;
+    }
+
+    /* WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 26px;
+      right: 26px;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 9999;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.4);
+      transition: var(--ease);
+      text-decoration: none;
+      animation: pulseWA 2.6s infinite;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+    }
+
+    @keyframes pulseWA {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45); }
+      70% { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+      .footer-content { flex-direction: column; text-align: center; }
+      .final { padding: 36px 24px; }
+      .hero { padding: 50px 0 36px; }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="container">
+  <header id="header">
+    <div class="container">
+      <nav>
+        <a href="index.html" class="logo">CRIPTO<span>CHARLYONE</span></a>
+        <a href="index.html" class="back-btn">
+          <i class="fa-solid fa-arrow-left"></i> Volver al inicio
+        </a>
+      </nav>
+    </div>
+  </header>
 
-<a href="index.html" class="back-btn">
-<i class="fa-solid fa-arrow-left"></i>
-Volver al Inicio
-</a>
+  <div class="container">
 
-<section class="hero">
+    <section class="hero reveal">
+      <div class="hero-icon-wrap">
+        <i class="fa-solid fa-brain"></i>
+      </div>
+      <div class="label">Mente del trader</div>
+      <h1>Trading y <span>Psicología</span></h1>
+      <p>
+        “El mercado recompensa a quienes dominan sus emociones.
+        El verdadero enemigo no está en los gráficos, sino en la mente del trader.”
+      </p>
+    </section>
 
-<i class="fa-solid fa-brain"></i>
+    <div class="grid">
 
-<h1>TRADING Y PSICOLOGÍA</h1>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+        <h2>El mercado no es el enemigo</h2>
+        <p>Muchos traders culpan al mercado cuando pierden. Pero el mercado simplemente se mueve. La verdadera batalla está en nuestras emociones y decisiones.</p>
+      </div>
 
-<p>
-"El mercado recompensa a quienes dominan sus emociones.
-El verdadero enemigo no está en los gráficos, sino en la mente del trader."
-</p>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-hourglass-half"></i></div>
+        <h2>La paciencia paga más que la impulsividad</h2>
+        <p>No operar también es una decisión. Esperar una configuración clara suele ser más rentable que buscar oportunidades donde no las hay.</p>
+      </div>
 
-</section>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h2>El mejor trader controla el riesgo</h2>
+        <p>Una sola operación nunca definirá tu futuro. Sobrevivir y mantener el capital es más importante que ganar mucho en un día.</p>
+      </div>
 
-<div class="grid">
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <h2>Aceptar pérdidas es parte del juego</h2>
+        <p>Las pérdidas no significan fracaso. Son el costo de hacer negocios en los mercados.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-scale-balanced"></i></div>
-<h2>El mercado no es el enemigo</h2>
-<p>Muchos traders culpan al mercado cuando pierden. Pero el mercado simplemente se mueve. La verdadera batalla está en nuestras emociones y decisiones.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-person-running"></i></div>
+        <h2>El trading es una maratón</h2>
+        <p>La constancia y la disciplina vencen a la emoción y la codicia.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-hourglass-half"></i></div>
-<h2>La paciencia paga más que la impulsividad</h2>
-<p>No operar también es una decisión. Esperar una configuración clara suele ser más rentable que buscar oportunidades donde no las hay.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-ban"></i></div>
+        <h2>No persigas el mercado</h2>
+        <p>Si una oportunidad se fue, habrá otra. Entrar por FOMO suele terminar en malas decisiones.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
-<h2>El mejor trader controla el riesgo</h2>
-<p>Una sola operación nunca definirá tu futuro. Sobrevivir y mantener el capital es más importante que ganar mucho en un día.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-head-side-virus"></i></div>
+        <h2>Tu mayor ventaja está en tu mente</h2>
+        <p>Dos traders pueden tener la misma estrategia, pero quien controle mejor sus emociones tendrá mejores resultados.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-<h2>Aceptar pérdidas es parte del juego</h2>
-<p>Las pérdidas no significan fracaso. Son el costo de hacer negocios en los mercados.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-chart-column"></i></div>
+        <h2>La consistencia es más importante</h2>
+        <p>Ganar un 1% diario durante mucho tiempo vale más que intentar duplicar una cuenta en una semana.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-person-running"></i></div>
-<h2>El trading es una maratón</h2>
-<p>La constancia y la disciplina vencen a la emoción y la codicia.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h2>El mercado premia la disciplina</h2>
+        <p>Operar por venganza, miedo o euforia es uno de los caminos más rápidos hacia las pérdidas.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-ban"></i></div>
-<h2>No persigas el mercado</h2>
-<p>Si una oportunidad se fue, habrá otra. Entrar por FOMO suele terminar en malas decisiones.</p>
-</div>
+      <div class="card reveal">
+        <div class="card-icon"><i class="fa-solid fa-user-check"></i></div>
+        <h2>Conviértete en una mejor versión de ti</h2>
+        <p>Un trader disciplinado, paciente y emocionalmente estable siempre tendrá más probabilidades de éxito.</p>
+      </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-brain"></i></div>
-<h2>Tu mayor ventaja está en tu mente</h2>
-<p>Dos traders pueden tener la misma estrategia, pero quien controle mejor sus emociones tendrá mejores resultados.</p>
-</div>
+    </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-chart-column"></i></div>
-<h2>La consistencia es más importante</h2>
-<p>Ganar un 1% diario durante mucho tiempo vale más que intentar duplicar una cuenta en una semana.</p>
-</div>
+    <div class="final reveal">
+      <div class="final-icon"><i class="fa-solid fa-lightbulb"></i></div>
+      <p>
+        <strong>No necesitas predecir el mercado.</strong>
+        Necesitas aprender a reaccionar correctamente ante él.
+        <br><br>
+        El éxito en el trading no se construye con una operación extraordinaria,
+        sino con cientos de decisiones disciplinadas.
+      </p>
+    </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-bullseye"></i></div>
-<h2>El mercado premia la disciplina</h2>
-<p>Operar por venganza, miedo o euforia es uno de los caminos más rápidos hacia las pérdidas.</p>
-</div>
+  </div>
 
-<div class="card">
-<div class="icon"><i class="fa-solid fa-rocket"></i></div>
-<h2>Conviértete en una mejor versión de ti</h2>
-<p>Un trader disciplinado, paciente y emocionalmente estable siempre tendrá más probabilidades de éxito.</p>
-</div>
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-logo">
+        CRIPTO<span>CHARLYONE</span>
+      </div>
+      <div style="text-align:center">
+        <div class="footer-icons">
+          <a href="https://youtube.com/@criptocharlyone" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://instagram.com/criptocharlyone" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://tiktok.com/@criptocharlyone" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://telegram.org" target="_blank" rel="noopener"><i class="fa-brands fa-telegram"></i></a>
+          <a href="https://wa.me/595976802136" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p class="footer-text">© 2026 CriptoCharlyOne · Trading · Blockchain · IA</p>
+      </div>
+    </div>
+  </footer>
 
-</div>
+  <a class="whatsapp-float" href="https://wa.me/595976802136" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
 
-<div class="final">
+  <script>
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+    });
 
-<i class="fa-solid fa-lightbulb"></i>
-
-<p>
-
-"No necesitas predecir el mercado.
-Necesitas aprender a reaccionar correctamente ante él.
-
-El éxito en el trading no se construye con una operación extraordinaria, sino con cientos de decisiones disciplinadas."
-
-</p>
-
-</div>
-
-</div>
-
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
-
