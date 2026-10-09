@@ -154,22 +154,34 @@
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 12px 22px;
-      border-radius: 14px;
+      padding: 11px 20px;
+      border-radius: 999px;
       text-decoration: none;
-      background: var(--bg-card);
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
       color: var(--text);
       font-weight: 600;
-      font-size: 0.92rem;
-      border: 1px solid var(--border);
+      font-size: 0.9rem;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.06);
       transition: var(--ease);
+      backdrop-filter: blur(8px);
+    }
+
+    .back-btn i {
+      font-size: 0.82rem;
+      transition: transform 0.3s ease;
     }
 
     .back-btn:hover {
-      background: var(--btc-dim);
-      border-color: rgba(247, 147, 26, 0.35);
+      background: linear-gradient(135deg, rgba(247,147,26,0.18), rgba(247,147,26,0.08));
+      border-color: rgba(247, 147, 26, 0.4);
       color: var(--btc);
       transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(247,147,26,0.15), inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    .back-btn:hover i {
+      transform: translateX(-3px);
     }
 
     /* Section */
@@ -350,8 +362,8 @@
     }
 
     .loss {
-      color: var(--red);
-      font-weight: 700;
+      color: #f87171;
+      font-weight: 600;
     }
 
     /* Summary cards */
@@ -673,12 +685,12 @@
               <td class="profit">+8.24%</td>
             </tr>
             <tr>
-              <td>Junio 2026</td>
+              <td class="loss">Junio 2026</td>
               <td class="loss">-626.70 USDT</td>
               <td class="loss">-62.67%</td>
             </tr>
             <tr>
-              <td>Julio 2026</td>
+              <td class="loss">Julio 2026</td>
               <td class="loss">-57.33 USDT</td>
               <td class="loss">-5.73%</td>
             </tr>
@@ -687,25 +699,30 @@
               <td class="profit">+28.89 USDT</td>
               <td class="profit">+2.89%</td>
             </tr>
+            <tr>
+              <td>Septiembre 2026</td>
+              <td class="profit">+281.43 USDT</td>
+              <td class="profit">+28.14%</td>
+            </tr>
           </tbody>
         </table>
       </div>
 
       <div class="summary-grid">
         <div class="summary-card reveal">
-          <h3>+2.607,58 USDT</h3>
+          <h3>+2.889,01 USDT</h3>
           <p>Profit total acumulado</p>
         </div>
         <div class="summary-card reveal">
-          <h3>+260,76%</h3>
+          <h3>+288,90%</h3>
           <p>Rentabilidad acumulada</p>
         </div>
         <div class="summary-card reveal">
-          <h3>+162,97 USDT</h3>
+          <h3>+169,94 USDT</h3>
           <p>Promedio mensual</p>
         </div>
         <div class="summary-card reveal">
-          <h3>14 / 16</h3>
+          <h3>15 / 17</h3>
           <p>Meses positivos</p>
         </div>
       </div>
