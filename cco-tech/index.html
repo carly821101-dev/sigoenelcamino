@@ -3,7 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CCO Tech | Tienda</title>
+  <title>CCO Tech | Equipos testeados con garantía</title>
+  <meta name="description" content="CCO Tech: venta de notebooks, PCs y accesorios testeados, con garantía y buenos estándares de calidad. Un negocio independiente de CriptoCharlyOne. Envíos a todo Paraguay." />
+  <meta name="theme-color" content="#050505" />
+  <link rel="canonical" href="https://www.criptocharlyone.site/cco-tech/index.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CCO Tech | Equipos testeados con garantía" />
+  <meta property="og:description" content="Notebooks, PCs y accesorios testeados, con garantía y buenos estándares de calidad." />
+  <meta property="og:url" content="https://www.criptocharlyone.site/cco-tech/index.html" />
+  <link rel="icon" href="img/logo.png" />
+  <script>document.documentElement.classList.add('js')</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNE2848HVF"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VNE2848HVF');</script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -459,10 +470,89 @@
       }
     }
 
+    /* ===== PREMIUM FX ===== */
+    #progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--btc),#ffd089);box-shadow:0 0 12px var(--btc-glow);z-index:10000}
+    #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:-1;opacity:.55}
+    :focus-visible{outline:2px solid var(--btc);outline-offset:3px;border-radius:8px}
+    .hero-text h1 .accent{background:linear-gradient(90deg,#F7931A,#ffd9a0,#F7931A,#e07b00);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+    @keyframes shimmer{to{background-position:-250% 0}}
+    .spot{position:relative;overflow:hidden}
+    .spot::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .35s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%),rgba(247,147,26,.16),transparent 45%)}
+    .spot:hover::after{opacity:1}
+    .tilt{will-change:transform}
+    .tilt.visible{transition:opacity .65s ease,transform .18s ease-out,border-color .35s,background .35s,box-shadow .35s}
+    .social-card:hover .social-icon{transform:scale(1.18) rotate(-6deg)}
+    .social-icon{transition:var(--ease)}
+
+
+    /* ===== PREMIUM CCO TECH ===== */
+    :root{--btc:#f97316;--btc-glow:rgba(249,115,22,.4)}
+    body::before{content:'';position:fixed;top:-20%;left:-10%;width:55vw;height:55vw;background:radial-gradient(circle,rgba(249,115,22,.10),transparent 65%);pointer-events:none;z-index:-1}
+    .js .reveal{opacity:0;transform:translateY(34px);transition:opacity .65s ease,transform .65s ease}
+    .js .reveal.visible{opacity:1;transform:none}
+    .js .product-card.reveal.visible{transition:opacity .45s ease,transform .2s ease-out,border-color .35s,box-shadow .35s}
+    .hero h1 span{background:linear-gradient(90deg,#f97316,#ffc999,#f97316,#ea580c);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s linear infinite}
+    .section-title p{color:#94a3b8;margin:10px auto 0;max-width:560px;line-height:1.7}
+    .trust-pill{transition:.3s}.trust-pill:hover{border-color:rgba(249,115,22,.4);transform:translateY(-2px)}
+    /* negocio independiente */
+    .biz{padding:10px 0 50px}
+    .biz-box{display:grid;grid-template-columns:1.4fr 1fr;gap:34px;align-items:center;border:1px solid rgba(249,115,22,.25);border-radius:32px;padding:44px;background:linear-gradient(135deg,rgba(249,115,22,.10),rgba(255,255,255,.02))}
+    .biz-box small{color:#f97316;letter-spacing:3px;font-weight:700;font-size:.75rem}
+    .biz-box h2{font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.2;margin:10px 0 14px}
+    .biz-box p{color:#cbd5e1;line-height:1.85}
+    .biz-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .biz-stats div{background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px 14px;text-align:center}
+    .biz-stats b{display:block;font-size:2rem;font-weight:800;color:#f97316;font-variant-numeric:tabular-nums}
+    .biz-stats span{font-size:.78rem;color:#94a3b8}
+    .biz-stats .wide{grid-column:1/-1}.biz-stats .wide b{font-size:1.15rem;color:#22c55e}
+    .pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    .pillar{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:28px 24px}
+    .pillar i{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(249,115,22,.12);color:#f97316;border:1px solid rgba(249,115,22,.25);font-size:1.2rem;margin-bottom:16px}
+    .pillar h3{font-size:1.05rem;margin-bottom:8px}.pillar p{color:#94a3b8;font-size:.9rem;line-height:1.75}
+    /* catálogo */
+    .grid-divider{grid-column:1/-1;display:flex;align-items:center;gap:16px;color:#94a3b8;font-size:.8rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin:6px 0}
+    .grid-divider::before,.grid-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent)}
+    .grid-divider.on{color:#22c55e}
+    .stock-badge:not(.vendido)::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:#052e16;margin-right:8px;animation:blink 1.6s infinite}
+    @keyframes blink{50%{opacity:.25}}
+    .product-card.sold,.js .product-card.sold.reveal.visible{opacity:.5}
+    .product-card.sold:hover,.js .product-card.sold.reveal.visible:hover{opacity:.88}
+    .product-card.sold .product-image img{filter:grayscale(.85) brightness(.85)}
+    .product-card.sold:hover .product-image img{filter:grayscale(.3)}
+    .product-card.sold{border-style:dashed}
+    .stock-badge.vendido{background:rgba(15,15,15,.78);border:1px solid rgba(239,68,68,.55);color:#fca5a5;box-shadow:none;backdrop-filter:blur(8px)}
+    .product-card.sold .wa-btn{background:rgba(255,255,255,.08);color:#cbd5e1;border:1px solid rgba(255,255,255,.1)}
+    .product-card.sold .wa-btn:hover{background:rgba(249,115,22,.18);color:#fff}
+    /* cotizaciones */
+    .fx-sec{padding:10px 0 80px}
+    .fx-tabs{display:flex;justify-content:center;gap:8px;margin-bottom:22px}
+    .fx-tabs button{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#cbd5e1;padding:8px 18px;border-radius:999px;font:inherit;font-size:.85rem;cursor:pointer;transition:.3s}
+    .fx-tabs button.on{background:rgba(249,115,22,.15);border-color:#f97316;color:#f97316}
+    .fx-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .fx-panel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:28px;padding:28px}
+    .fx-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+    .fx-head h3{font-size:1.1rem}.fx-sub{color:#94a3b8;font-size:.8rem}
+    .fx-chg{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:999px;padding:5px 12px;font-size:.78rem;font-weight:600;white-space:nowrap;color:#cbd5e1}
+    .fx-val{font-size:clamp(2rem,4vw,2.7rem);font-weight:800;letter-spacing:-1px;margin:14px 0 4px;font-variant-numeric:tabular-nums}
+    .fx-chart{position:relative;margin-top:8px;min-height:150px}
+    .fx-chart svg{width:100%;height:auto;display:block;touch-action:pan-y}
+    .fx-chart .ln{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.8s ease}
+    .fx-chart .draw .ln{stroke-dashoffset:0}
+    .fx-chart .ar{opacity:0;transition:opacity 1s .6s}.fx-chart .draw .ar{opacity:1}
+    .fx-chart .cl{stroke:rgba(255,255,255,.3);opacity:0}.fx-chart .cd{opacity:0}
+    .fx-chart text{fill:#64748b;font-size:11px}
+    .tip{position:absolute;top:0;pointer-events:none;background:rgba(10,10,10,.92);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:6px 10px;font-size:.78rem;opacity:0;transform:translateX(-50%);white-space:nowrap}
+    .fx-foot{color:#64748b;font-size:.78rem;margin-top:8px}
+    .fx-cross{margin-top:18px;text-align:center;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.22);border-radius:18px;padding:16px;color:#e2e8f0}
+    .fx-cross i{color:#f97316;margin-right:8px}
+    .fx-note{color:#64748b;font-size:.78rem;text-align:center;margin-top:14px}
+    @media(max-width:900px){.biz-box,.fx-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.biz-box{padding:30px 22px}}
   </style>
 </head>
 
 <body>
+<div id="progress"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
 
 <header>
   <div class="container">
@@ -485,18 +575,40 @@
 
 <section class="hero">
   <div class="container">
-    <small>Tecnología con propósito</small>
-    <h1>Equipos listos para <span>trabajar, estudiar y jugar</span></h1>
+    <small>Negocio independiente · Tecnología con propósito</small>
+    <h1>Equipos testeados, listos para <span>trabajar, estudiar y jugar</span></h1>
     <p>
-      Notebooks, PCs armadas y accesorios revisados, probados y funcionando al 100%.
-      Consultá stock y coordiná tu compra directo por WhatsApp.
+      CCO Tech es una fuente de ingreso independiente de mis inversiones: un negocio propio de venta de equipos.
+      Cada equipo se prueba, funciona al 100% y se entrega con garantía y buenos estándares de calidad.
     </p>
-
     <div class="trust-row">
-      <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Equipos revisados</div>
-      <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Listo para usar</div>
+      <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Equipos testeados</div>
+      <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Garantía incluida</div>
+      <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Estándares de calidad</div>
       <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Atención personalizada</div>
       <div class="trust-pill"><i class="fa-solid fa-circle-check"></i> Envíos a todo Paraguay</div>
+    </div>
+  </div>
+</section>
+
+<section class="biz">
+  <div class="container">
+    <div class="biz-box">
+      <div>
+        <small>NEGOCIO PROPIO</small>
+        <h2>Un ingreso que no depende de los mercados</h2>
+        <p>CCO Tech funciona aparte de mis inversiones: tiene su propia operación y sus propios resultados. Diversificar las fuentes de ingreso es parte de cómo construyo estabilidad, y por eso cada venta se trabaja con el mismo cuidado: equipos testeados, estándares de calidad y garantía.</p>
+      </div>
+      <div class="biz-stats">
+        <div><b id="c-disp" data-count="0">0</b><span>Disponibles ahora</span></div>
+        <div><b id="c-sold" data-count="0">0</b><span>Ya vendidos</span></div>
+        <div class="wide"><b><i class="fa-solid fa-shield-halved"></i> Garantía en los equipos</b><span>Consultá los detalles por WhatsApp</span></div>
+      </div>
+    </div>
+    <div class="pillars">
+      <div class="pillar"><i class="fa-solid fa-layer-group"></i><h3>Ingreso independiente</h3><p>Un negocio con vida propia, separado de las inversiones y de la volatilidad de los mercados.</p></div>
+      <div class="pillar"><i class="fa-solid fa-clipboard-check"></i><h3>Testeados y con calidad</h3><p>Lo que ves funcionando es lo que recibís: equipos probados y seleccionados con buenos estándares.</p></div>
+      <div class="pillar"><i class="fa-solid fa-shield-halved"></i><h3>Compra con garantía</h3><p>Los equipos cuentan con garantía para que compres con tranquilidad y respaldo.</p></div>
     </div>
   </div>
 </section>
@@ -507,11 +619,13 @@
     <div class="section-title">
       <small>CATÁLOGO</small>
       <h2>Nuestros Equipos</h2>
+      <p>Equipos testeados y con garantía. Los ya vendidos quedan a la vista como respaldo de cada entrega.</p>
     </div>
 
     <div class="product-grid">
 
       <!-- ========== DISPONIBLES ========== -->
+      <div class="grid-divider on">Disponibles ahora</div>
 
       <!-- Speaker B-MAX -->
       <div class="product-card">
@@ -644,9 +758,10 @@
       </div>
 
       <!-- ========== VENDIDOS ========== -->
+      <div class="grid-divider">Ya vendidos</div>
 
       <!-- iPhone 11 128GB Verde -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/iphone-11-128gb-verde.jpg" alt="iPhone 11 128GB Verde Libre">
@@ -663,13 +778,13 @@
             <li><i class="fa-solid fa-circle-check"></i> Funciona perfectamente</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20el%20iPhone%2011%20128GB%20Verde%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Notebook Positivo Premium R430P -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/notebook-positivo-r430p.jpg" alt="Notebook Positivo Premium R430P Intel Core 2 Duo">
@@ -687,13 +802,13 @@
             <li><i class="fa-solid fa-plug"></i> Incluye cargador original y funda</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20Positivo%20Premium%20R430P%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- PC de escritorio -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/pc-i5.png" alt="PC de escritorio Intel i5-6400">
@@ -709,13 +824,13 @@
             <li><i class="fa-solid fa-bolt"></i> Fuente 650W certificada</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20PC%20i5-6400%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Mousepad Tu Imperio (billete 100) -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/mousepad-imperio.png" alt="Mousepad XL Tu Escritorio Tu Imperio diseño billete 100">
@@ -731,13 +846,13 @@
             <li><i class="fa-solid fa-crown"></i> Bordes reforzados, diseño épico y duradero</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20el%20Mousepad%20Tu%20Imperio%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Notebook Lenovo Yoga Táctil -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/lenovo-yoga-tactil.jpg" alt="Notebook Lenovo Yoga i5 7ma generación pantalla táctil">
@@ -753,13 +868,13 @@
             <li><i class="fa-solid fa-hand-pointer"></i> Diseño convertible 2 en 1</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20Lenovo%20Yoga%20T%C3%A1ctil%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Notebook Acer i3 -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/acer-i3.png" alt="Notebook Acer Intel Core i3-7020U">
@@ -775,13 +890,13 @@
             <li><i class="fa-solid fa-wifi"></i> WiFi AC</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20Acer%20i3-7020U%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Notebook HP 14" -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/hp-14.png" alt="Notebook HP 14 pulgadas">
@@ -797,13 +912,13 @@
             <li><i class="fa-solid fa-plug"></i> Incluye cargador original HP</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20HP%2014%22%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Acer Aspire 5733 usado -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/acer-aspire5733.png" alt="Notebook Acer Aspire 5733">
@@ -819,13 +934,13 @@
             <li><i class="fa-solid fa-compact-disc"></i> Quemador DVD RW</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20Notebook%20Acer%20Aspire%205733%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Mousepad Samurai -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/mousepad-samurai.png" alt="Mousepad Gamer XL Samurai">
@@ -840,13 +955,13 @@
             <li><i class="fa-solid fa-droplet"></i> Fácil de limpiar</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20el%20Mousepad%20Gamer%20Samurai%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Mousepad Samurai (diseño 2) -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/mousepad-samurai-2.png" alt="Mousepad Gamer Samurai diseño 2">
@@ -861,13 +976,13 @@
             <li><i class="fa-solid fa-mouse"></i> Compatible con mouse óptico y láser</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20el%20Mousepad%20Gamer%20Samurai%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Monitor FTX 19" -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/monitor-ftx-19.jpg" alt="Monitor FTX 19 pulgadas entrada VGA y HDMI">
@@ -882,13 +997,13 @@
             <li><i class="fa-solid fa-bolt"></i> Alimentación DC 12V</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20el%20Monitor%20FTX%2019%22%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
 
       <!-- Notebook HP 14" i3-1005G1 -->
-      <div class="product-card">
+      <div class="product-card sold">
         <div class="product-image">
           <span class="stock-badge vendido">VENDIDO</span>
           <img src="img/hp-14-i3.png" alt="Notebook HP Laptop 14 pulgadas Intel Core i3-1005G1">
@@ -904,7 +1019,7 @@
             <li><i class="fa-solid fa-plug"></i> Incluye cargador original HP</li>
           </ul>
           <a class="wa-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Me%20interesa%20la%20HP%20Laptop%2014%22%20i3-1005G1%2C%20%C2%BFme%20pasas%20info%3F">
-            <i class="fa-brands fa-whatsapp"></i> Consultar por WhatsApp
+            <i class="fa-brands fa-whatsapp"></i> Consultar por uno similar
           </a>
         </div>
       </div>
@@ -914,12 +1029,29 @@
   </div>
 </section>
 
+<section class="fx-sec" id="cotizaciones">
+  <div class="container">
+    <div class="section-title">
+      <small>DIVISAS</small>
+      <h2>Cotizaciones diarias</h2>
+      <p>Guaraní y real frente al dólar, para comparar precios en la frontera.</p>
+    </div>
+    <div class="fx-tabs"><button data-r="7">7 días</button><button data-r="30" class="on">30 días</button></div>
+    <div class="fx-grid">
+      <div class="fx-panel"><div class="fx-head"><div><h3>Dólar → Guaraní</h3><span class="fx-sub">Guaraníes por US$ 1</span></div><span class="fx-chg" id="chg-pyg">—</span></div><div class="fx-val" id="v-pyg">—</div><div class="fx-chart" id="ch-pyg"></div><div class="fx-foot" id="mm-pyg"></div></div>
+      <div class="fx-panel"><div class="fx-head"><div><h3>Dólar → Real</h3><span class="fx-sub">Reales por US$ 1</span></div><span class="fx-chg" id="chg-brl">—</span></div><div class="fx-val" id="v-brl">—</div><div class="fx-chart" id="ch-brl"></div><div class="fx-foot" id="mm-brl"></div></div>
+    </div>
+    <div class="fx-cross" id="cross" hidden></div>
+    <p class="fx-note" id="fx-note">Cargando cotizaciones…</p>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="container">
     <div class="cta-box">
       <h2>¿No encontraste lo que buscabas?</h2>
       <p>
-        Recibimos equipos nuevos constantemente. Escribinos y te contamos qué tenemos
+        Recibimos equipos nuevos constantemente, todos testeados y con garantía. Escribinos y te contamos qué tenemos
         disponible según tu presupuesto y necesidad.
       </p>
       <a class="cta-btn" target="_blank" href="https://wa.me/595976802136?text=Hola!%20Estoy%20buscando%20un%20equipo%2C%20%C2%BFme%20pod%C3%A9s%20ayudar%3F">
@@ -943,5 +1075,135 @@
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+
+<script>
+(function () {
+  const q = s => document.querySelector(s);
+  q('#c-disp').dataset.count = document.querySelectorAll('.product-card:not(.sold)').length;
+  q('#c-sold').dataset.count = document.querySelectorAll('.product-card.sold').length;
+  document.querySelectorAll('.product-card,.pillar,.fx-panel,.biz-box,.cta-box,.fx-cross').forEach(e => e.classList.add('reveal'));
+})();
+    // ===== PREMIUM =====
+    const RM = matchMedia('(prefers-reduced-motion: reduce)').matches, HOVER = matchMedia('(hover:hover)').matches;
+    const ev = (n, p) => { try { gtag('event', n, p || {}); } catch (e) {} };
+    const pg = document.getElementById('progress');
+    let maxScroll = 0;
+    function onScroll() { const h = document.documentElement.scrollHeight - innerHeight; const p = h > 0 ? Math.min(scrollY / h, 1) : 0; pg.style.transform = `scaleX(${p})`; maxScroll = Math.max(maxScroll, p); }
+    addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+    document.querySelectorAll('.product-card:not(.sold),.pillar').forEach(e => { e.dataset.tilt = 1; e.classList.add('tilt'); });
+    document.querySelectorAll('.product-card,.pillar,.fx-panel,.biz-box,.cta-box,.fx-cross').forEach(el => {
+      el.classList.add('spot');
+      el.addEventListener('pointermove', e => {
+        const r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', (e.clientX - r.left) + 'px'); el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        if (el.dataset.tilt && !RM && HOVER) { const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; el.style.transform = `perspective(900px) rotateX(${(-y * 7).toFixed(2)}deg) rotateY(${(x * 7).toFixed(2)}deg) translateY(-6px)`; }
+      });
+      el.addEventListener('pointerleave', () => { if (el.dataset.tilt) el.style.transform = ''; });
+    });
+
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const end = +el.dataset.count, suf = el.dataset.suffix || ''; let done = false;
+      new IntersectionObserver((es, o) => {
+        if (!es[0].isIntersecting || done) return; done = true; o.disconnect();
+        if (RM) { el.textContent = end + suf; return; }
+        const t0 = performance.now();
+        (function f(t) { const k = Math.min((t - t0) / 1400, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(f); })(t0);
+      }, { threshold: .6 }).observe(el);
+    });
+
+    // Red de partículas de fondo
+    (function () {
+      const c = document.getElementById('fx'); if (!c || RM) return;
+      const x = c.getContext('2d'); let W, H, P = [], m = { x: -999, y: -999 };
+      function size() { W = c.width = innerWidth; H = c.height = innerHeight; const n = Math.min(70, Math.floor(W * H / 22000)); P = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3, r: Math.random() * 1.4 + .6 })); }
+      size(); addEventListener('resize', size); addEventListener('pointermove', e => { m.x = e.clientX; m.y = e.clientY; }, { passive: true });
+      (function loop() {
+        x.clearRect(0, 0, W, H);
+        for (const p of P) {
+          p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+          const dx = p.x - m.x, dy = p.y - m.y, d = Math.hypot(dx, dy); if (d < 140 && d > 0) { p.x += dx / d * .6; p.y += dy / d * .6; }
+          x.fillStyle = 'rgba(247,147,26,.8)'; x.beginPath(); x.arc(p.x, p.y, p.r, 0, 6.283); x.fill();
+        }
+        for (let i = 0; i < P.length; i++) for (let j = i + 1; j < P.length; j++) {
+          const d = Math.hypot(P[i].x - P[j].x, P[i].y - P[j].y);
+          if (d < 120) { x.strokeStyle = `rgba(247,147,26,${(1 - d / 120) * .22})`; x.lineWidth = 1; x.beginPath(); x.moveTo(P[i].x, P[i].y); x.lineTo(P[j].x, P[j].y); x.stroke(); }
+        }
+        if (!document.hidden) requestAnimationFrame(loop); else document.addEventListener('visibilitychange', () => { if (!document.hidden) loop(); }, { once: true });
+      })();
+    })();
+
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting && !e.target.classList.contains('visible')) { const t = e.target, i = [...t.parentElement.children].indexOf(t) % 3; t.style.transitionDelay = (i * 90) + 'ms'; t.classList.add('visible'); setTimeout(() => t.style.transitionDelay = '', 800 + i * 90); }
+}), { threshold: .1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ===== Cotizaciones diarias: guaraní y real por dólar =====
+(async function () {
+  const q = s => document.querySelector(s);
+  const nf = (v, d) => Number(v).toLocaleString('es-AR', { minimumFractionDigits: d, maximumFractionDigits: d });
+  const pad = n => String(n).padStart(2, '0'), iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  const lab = d => new Date(d + 'T12:00:00').toLocaleDateString('es-AR', { day: '2-digit', month: 'short' });
+  const days = []; for (let i = 29; i >= 0; i--) { const d = new Date(); d.setDate(d.getDate() - i); days.push(iso(d)); }
+  let cache = {}; try { cache = JSON.parse(localStorage.getItem('cco_fx1') || '{}'); } catch (e) {}
+  const ok = r => r && isFinite(r.pyg) && isFinite(r.brl);
+  async function get(d) {
+    if (ok(cache[d])) return cache[d];
+    for (const u of [`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@${d}/v1/currencies/usd.json`, `https://${d}.currency-api.pages.dev/v1/currencies/usd.json`]) {
+      try { const r = await fetch(u); if (!r.ok) continue; const j = await r.json(); const o = { pyg: +j.usd.pyg, brl: +j.usd.brl }; if (ok(o)) return cache[d] = o; } catch (e) {}
+    }
+    return null;
+  }
+  const res = await Promise.all(days.map(get));
+  Object.keys(cache).forEach(k => { if (!days.includes(k)) delete cache[k]; });
+  try { localStorage.setItem('cco_fx1', JSON.stringify(cache)); } catch (e) {}
+  const rows = days.map((d, i) => res[i] && { d, ...res[i] }).filter(Boolean);
+  const cfg = [['pyg', '#f97316', 0], ['brl', '#22c55e', 2]], note = q('#fx-note');
+
+  if (rows.length < 2) {   // sin histórico: intento al menos el valor actual
+    try {
+      const j = await (await fetch('https://open.er-api.com/v6/latest/USD')).json();
+      cfg.forEach(([k, c, dec]) => { q('#v-' + k).textContent = nf(j.rates[k.toUpperCase()], dec); });
+      note.textContent = 'Histórico no disponible por ahora. Mostramos el valor actual de referencia.'; return;
+    } catch (e) { note.textContent = 'No pudimos cargar las cotizaciones. Probá de nuevo en unos minutos.'; return; }
+  }
+
+  function spark(el, pts, col, dec, gid) {
+    const W = 520, H = 190, L = 8, R = 8, T = 14, B = 24, vs = pts.map(p => p.v), mn = Math.min(...vs), mx = Math.max(...vs), pd = (mx - mn) * .15 || mx * .01, lo = mn - pd, hi = mx + pd;
+    const X = i => L + i * (W - L - R) / Math.max(pts.length - 1, 1), Y = v => T + (1 - (v - lo) / (hi - lo)) * (H - T - B);
+    const d = pts.map((p, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(p.v).toFixed(1)).join(' ');
+    el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución diaria"><defs><linearGradient id="${gid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${col}" stop-opacity=".32"/><stop offset="1" stop-color="${col}" stop-opacity="0"/></linearGradient></defs><path class="ar" d="${d} L${X(pts.length - 1)} ${H - B} L${X(0)} ${H - B}Z" fill="url(#${gid})"/><path class="ln" pathLength="1" d="${d}" fill="none" stroke="${col}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><line class="cl" y1="${T}" y2="${H - B}"/><circle class="cd" r="4.5" fill="${col}" stroke="#0a0a0a" stroke-width="2"/><circle cx="${X(pts.length - 1)}" cy="${Y(vs[vs.length - 1])}" r="4.5" fill="${col}" stroke="#0a0a0a" stroke-width="2"/><text x="${L}" y="${H - 6}">${lab(pts[0].d)}</text><text x="${W - R}" y="${H - 6}" text-anchor="end">${lab(pts[pts.length - 1].d)}</text></svg><div class="tip"></div>`;
+    const svg = el.firstChild, tip = el.querySelector('.tip'), cl = svg.querySelector('.cl'), cd = svg.querySelector('.cd');
+    requestAnimationFrame(() => requestAnimationFrame(() => svg.classList.add('draw')));
+    svg.addEventListener('pointermove', e => {
+      const r = svg.getBoundingClientRect(), k = Math.max(0, Math.min(pts.length - 1, Math.round(((e.clientX - r.left) / r.width * W - L) / (W - L - R) * (pts.length - 1)))), x = X(k);
+      cl.setAttribute('x1', x); cl.setAttribute('x2', x); cd.setAttribute('cx', x); cd.setAttribute('cy', Y(pts[k].v)); cl.style.opacity = cd.style.opacity = 1;
+      tip.innerHTML = `<b>${nf(pts[k].v, dec)}</b> · ${lab(pts[k].d)}`; tip.style.opacity = 1; tip.style.left = Math.max(50, Math.min(r.width - 50, x / W * r.width)) + 'px';
+    });
+    svg.addEventListener('pointerleave', () => { cl.style.opacity = cd.style.opacity = tip.style.opacity = 0; });
+  }
+  let range = 30;
+  function draw() {
+    const sl = rows.slice(-range);
+    cfg.forEach(([k, c, dec]) => {
+      const pts = sl.map(r => ({ d: r.d, v: r[k] })), vs = pts.map(p => p.v);
+      spark(q('#ch-' + k), pts, c, dec, 'g' + k);
+      q('#mm-' + k).textContent = `Mín ${nf(Math.min(...vs), dec)} · Máx ${nf(Math.max(...vs), dec)} · últimos ${sl.length} días`;
+    });
+  }
+  const last = rows[rows.length - 1], prev = rows[rows.length - 2];
+  cfg.forEach(([k, c, dec]) => {
+    q('#v-' + k).textContent = nf(last[k], dec);
+    const p = (last[k] - prev[k]) / prev[k] * 100;
+    q('#chg-' + k).textContent = (p >= 0 ? '▲ ' : '▼ ') + nf(Math.abs(p), 2) + '% vs. día anterior';
+  });
+  draw();
+  document.querySelectorAll('.fx-tabs button').forEach(b => b.addEventListener('click', () => { range = +b.dataset.r; document.querySelectorAll('.fx-tabs button').forEach(x => x.classList.toggle('on', x === b)); draw(); }));
+  const cr = q('#cross'); cr.hidden = false;
+  cr.innerHTML = `<i class="fa-solid fa-right-left"></i> <b>1 real ≈ ${nf(last.pyg / last.brl, 0)} guaraníes</b> · 1 dólar ≈ ${nf(last.pyg, 0)} Gs. y ${nf(last.brl, 2)} R$`;
+  note.textContent = 'Cotización diaria de referencia al ' + lab(last.d) + '. Los valores en casas de cambio pueden variar.';
+})();
+</script>
 </body>
 </html>
