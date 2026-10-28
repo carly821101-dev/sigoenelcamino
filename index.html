@@ -228,7 +228,7 @@
       max-width: 460px; opacity: 0; animation: fadeUp 0.75s ease forwards 0.6s;
     }
     .buttons .btn:nth-child(1) { grid-column: 1 / -1; }
-    .buttons .btn:nth-child(5) { grid-column: 1 / -1; }
+    .buttons .btn:nth-child(6) { grid-column: 1 / -1; }
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 9px;
       padding: 14px 20px; border-radius: 14px; font-weight: 600; font-size: 0.92rem;
@@ -249,6 +249,9 @@
     .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
     .btn-ghost:hover { background: var(--bg-card-hover); border-color: rgba(255, 255, 255, 0.18); transform: translateY(-2px); }
     .btn-soft { background: var(--btc-dim); color: var(--btc); border: 1px solid rgba(247, 147, 26, 0.22); }
+    .btn-btc { background: linear-gradient(135deg, #2a1a05, #140c02); color: var(--btc); border: 1px solid rgba(247, 147, 26, 0.45); }
+    .btn-btc i { font-size: 1.15rem; }
+    .btn-btc:hover { background: linear-gradient(135deg, #3a2406, #1c1103); border-color: var(--btc); box-shadow: 0 6px 20px var(--btc-glow); transform: translateY(-2px); }
     .btn-soft:hover { background: rgba(247, 147, 26, 0.18); border-color: rgba(247, 147, 26, 0.4); transform: translateY(-2px); }
 
     .socials {
@@ -686,6 +689,7 @@
     <a href="resultados.html">Performance</a>
     <a href="psicologia.html">Psicología</a>
     <a href="cco-tech/index.html">CCO Tech · Tienda</a>
+    <a href="indicador.html">Indicador</a>
   </div>
 
   <section class="hero container">
@@ -698,6 +702,7 @@
         <a href="resultados.html" class="btn btn-soft"><i class="fa-solid fa-chart-line"></i> Performance</a>
         <a href="psicologia.html" class="btn btn-soft"><i class="fa-solid fa-brain"></i> Psicología</a>
         <a href="cco-tech/index.html" class="btn btn-ghost"><i class="fa-solid fa-store"></i> CCO Tech</a>
+        <a href="indicador.html" class="btn btn-btc"><i class="fa-brands fa-bitcoin"></i> Indicador</a>
         <a href="#redes" class="btn btn-ghost"><i class="fa-solid fa-share-nodes"></i> Mis redes</a>
       </div>
       <div class="socials" id="redes">
